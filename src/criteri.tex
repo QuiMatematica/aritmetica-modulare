@@ -1,0 +1,148 @@
+\chapter{Criteri di congruenza e criteri di divisibilità}
+
+In questo capitolo avremo spesso a che fare con le cifre di cui è composto un numero. E avremo bisogno di sostituire le singole cifre con delle lettere. Mettiamo una riga sopra ad una rappresentazione di un numero per indicare la giustapposizione delle cifre e non il prodotto dei numeri. Per esempio:
+\begin{equation*}
+    a=1, b=2, c=3 \allora \overline{abc} = 123.
+\end{equation*}
+
+Dobbiamo tenere presente, inoltre, la scomposizione dei numeri in unità, decine, centinaia, eccetera. Quindi:
+\begin{equation*}
+    \overline{abc} = a \cdot 100 + b \cdot 10 + c
+\end{equation*}
+
+\section{Criteri di congruenza}
+
+I criteri di congruenza servono per determinare a che cosa è congruente un intero fissato.
+
+\begin{mdframed}
+    \begin{teorema}
+        Un intero è congruente modulo 2 alla sua cifra delle unità.
+    \end{teorema}
+    \begin{proof}
+        Presento la dimostrazione per numeri di 3 cifre. La dimostrazione è facilmente estendibile ad un qualunque numero di cifre.
+
+        Consideriamo il numero $\overline{abc}$. Risulta:
+
+        \begin{align*}
+            [\overline{abc}]_2 &= [a \cdot 100 + b \cdot 10 + c]_2 = \\
+            &= [a]_2 \cdot [100]_2 + [b]_2 \cdot [10]_2 + [c]_2 = \\
+            &= [a]_2 \cdot [0]_2 + [b]_2 \cdot [0]_2 + [c]_2 = \\
+            &= [0]_2 + [0]_2 + [c]_2 = \\
+            &= [c]_2
+        \end{align*}
+    \end{proof}
+\end{mdframed}
+
+\begin{mdframed}
+    \begin{teorema}
+        Un intero è congruente modulo 3 alla somma delle sue cifre.
+    \end{teorema}
+    \begin{proof}
+        Presento la dimostrazione per numeri di 3 cifre. La dimostrazione è facilmente estendibile ad un qualunque numero di cifre.
+
+        Consideriamo il numero $\overline{abc}$. Risulta:
+
+        \begin{align*}
+            [\overline{abc}]_3 &= [a \cdot 100 + b \cdot 10 + c]_3 = \\
+            &= [a]_3 \cdot [100]_3 + [b]_2 \cdot [10]_3 + [c]_3 = \\
+            &= [a]_3 \cdot [1]_3 + [b]_3 \cdot [1]_3 + [c]_3 = \\
+            &= [a]_3 + [b]_3 + [c]_3 = \\
+            &= [a + b + c]_3
+        \end{align*}
+    \end{proof}
+\end{mdframed}
+
+Senza dare le dimostrazioni (lasciate alla buona volontà del lettore) aggiungo gli altri criteri di congruenza nella tabella~\ref{tab:criteri_congruenza}.
+
+\begin{table}[tp]
+    \begin{mdframed}    
+        \label{tab:criteri_congruenza}
+        \centering
+        \begin{tabular}{c|rcl}
+            \toprule
+            Modulo & Criterio & di & congruenza \\
+            \midrule
+            modulo 2 & $[\overline{abcde}]_2 $ & $ = $ & $ [e]_2$ \\
+            modulo 3 & $[\overline{abcde}]_3 $ & $ = $ & $ [a + b + c + d + e]_3$ \\
+            modulo 4 & $[\overline{abcde}]_4 $ & $ = $ & $ [\overline{de}]_4$ \\
+            modulo 5 & $[\overline{abcde}]_5 $ & $ = $ & $ [e]_5$ \\
+            modulo 8 & $[\overline{abcde}]_8 $ & $ = $ & $ [\overline{cde}]_8$ \\
+            modulo 9 & $[\overline{abcde}]_9 $ & $ = $ & $ [a + b + c + d + e]_9$ \\
+            modulo 11 & $[\overline{abcde}]_{11} $ & $ = $ & $ [a - b + c - d + e]_{11}$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Criteri di congruenza}
+    \end{mdframed}
+\end{table}
+
+\section{Criteri di divisibilità}
+
+Dai criteri di congruenza derivano i criteri di divisibilità.
+
+\begin{mdframed}
+    \begin{teorema}
+        Un intero è divisibile per 2 se e solo se è pari la cifra delle unità.
+    \end{teorema}
+    \begin{proof}
+        Per il criterio di congruenza modulo 2:
+        \begin{equation*}
+            [\overline{abcde}]_2 = [e]_2
+        \end{equation*}
+        Affinché il numero $\overline{abcde}$ sia divisibile per 2, deve essere congruente a 0, ovvero il numero deve appartenere alla classe di congruenza dello 0:
+        \begin{equation*}
+            [\overline{abcde}]_2 = [e]_2 = [0]_2
+        \end{equation*}
+        Da questo deduciamo che un numero è divisibile per 2 se la sua cifra delle unità è divisibile per 2, ovvero è pari.
+    \end{proof}
+\end{mdframed}
+
+\begin{mdframed}
+    \begin{teorema}
+        Un intero è divisibile per 3 se e solo se la somma delle sue cifre è divisibile per 3.
+    \end{teorema}
+    \begin{proof}
+        Per il criterio di congruenza modulo 3:
+        \begin{equation*}
+            [\overline{abcde}]_3 = [a + b + c + d + e]_3
+        \end{equation*}
+        Affinché il numero $\overline{abcde}$ sia divisibile per 3, deve essere congruente a 0, ovvero il numero deve appartenere alla classe di congruenza dello 0:
+        \begin{equation*}
+            [\overline{abcde}]_3 = [a + b + c + d + e]_3 = [0]_2
+        \end{equation*}
+        Da questo deduciamo che un numero è divisibile per 3 se la somma delle sue cifre è divisibile per 3.
+    \end{proof}
+\end{mdframed}
+
+Le dimostrazioni dei rimanenti criteri di visibilità sono identiche a queste due presentate, e conducono ai criteri di divisibità che già conoscete.
+
+Aggiungiamo due criteri di divisibilità che non derivano da un criterio di congruenza:
+
+\begin{mdframed}
+    \begin{teorema}
+        Un intero è divisibile per 7 se e solo se è divisibile per 7 l'intero costituito nel seguente modo: si prende l'intero iniziale privato della cifra delle unità e gli si sottrae il doppio della cifra delle unità.
+    \end{teorema}
+    \begin{proof}[Dimostrazione parte se]
+        Per semplicità presentiamo la dimostrazione per numeri di due cifre. La dimostrazione è facilmente estendibile a numeri di qualunque lunghezza.
+
+        Quello che vogliamo dimostrare è che il numero $\overline{ab}$ è divisibile per 7 se è divisibile il numero costruito prendendo l'intero iniziale privato della cifra delle unità (e quindi rimane solo la cifra delle decine) a cui si sottrae il doppio della cifra delle unità, ovvero se è divisibile per 7 il numero $a - 2b$. Quindi, passando alle classi di congruenza, dobbiamo dimostrare che:
+        \begin{equation*}
+            [a - 2b]_7 = [0]_7 \allora [\overline{ab}]_7 = [0]_7
+        \end{equation*}
+        Dall'ipotesi con cui stiamo lavorando possiamo ricavare che:
+        \begin{equation*}
+            [a]_7 = [2b]_7
+        \end{equation*}
+        Calcoliamo allora la classe di congruenza del numero $\overline{ab}$:
+        \begin{align*}
+            [\overline{ab}]_7 &= [a \cdot 10 + b]_7 =
+            &= [a]_7 \cdot [10]_7 + [b]_7 =
+            &= [2b]_7 \cdot [3]_7 + [b]_7 =
+            &= [6b]_7 + [b]_7 =
+            &= [7b]_7 =
+            &= [0]_7
+        \end{align*}
+
+        
+    \end{proof}
+\end{mdframed}
+
