@@ -6,25 +6,37 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{amsthm}
 \usepackage{siunitx}
-\usepackage{mdframed}
+\usepackage[framemethod=TikZ]{mdframed}
 \usepackage{float}
 
-%\mdfdefinestyle{theoremstyle}{%
-%	linecolor=blue,linewidth=2pt,%
-%	frametitlerule=true,%
-%	frametitlebackgroundcolor=blue!20,
-%	innertopmargin=\topskip,
-%}
-%\mdtheorem[style=theoremstyle]{teorema}{Teorema}[chapter]
-%\mdtheorem[style=theoremstyle]{corollario}{Corollario}[chapter]
-%\mdtheorem[style=theoremstyle]{lemma}{Lemma}[chapter]
-%\mdtheorem[style=theoremstyle]{esercizio}{Esercizio}[chapter]
+\mdfdefinestyle{definitionstyle}{%
+	linecolor=green,linewidth=2pt,%
+	frametitlerule=true,%
+	frametitlebackgroundcolor=green!20,%
+	innertopmargin=\topskip,
+}
 
-\newtheorem{definizione}{Definizione}[chapter]
-\newtheorem{esercizio}{Esercizio}[chapter]
-\newtheorem{teorema}{Teorema}[chapter]
+\mdfdefinestyle{theoremstyle}{%
+	linecolor=red,linewidth=2pt,%
+	frametitlerule=true,%
+	frametitlebackgroundcolor=red!20,%
+	innertopmargin=\topskip,
+}
+
+\mdfdefinestyle{exercisestyle}{%
+	linecolor=blue,linewidth=2pt,%
+	frametitlerule=true,%
+	frametitlebackgroundcolor=blue!20,%
+	innertopmargin=\topskip,
+}
+
+\mdtheorem[style=definitionstyle]{definizione}{Definizione}[chapter]
+\mdtheorem[style=theoremstyle]{teorema}{Teorema}[chapter]
+\mdtheorem[style=exercisestyle]{esercizio}{Esercizio}[chapter]
+
+\newmdenv[linecolor=red,linewidth=2pt]{dimostrazione}
+\newmdenv[linecolor=blue,linewidth=2pt]{soluzione}
 
 \newcommand{\Z}[0]{\ensuremath{ \mathbb{Z} }}
 \newcommand{\valoreassoluto}[1]{\ensuremath{ \lvert #1 \rvert }}
