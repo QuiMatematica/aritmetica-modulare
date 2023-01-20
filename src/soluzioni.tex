@@ -1,0 +1,187 @@
+\chapter{Soluzioni}
+\label{ch:soluzioni}
+
+\begin{proof}[Soluzione esercizio~\ref{ex:distrettuali_2019}]
+    I numeri palindromi di 6 cifre hanno la seguente struttura:
+
+    \begin{equation*}
+        \overline{abccba}
+    \end{equation*}
+
+    Dobbiamo trovare quanti di questi numeri sono divisibili per 33, ovvero sono divisibili per 3 e per 11.
+
+    Innanzitutto osserviamo che tutti i numeri palindromi di 6 cifre sono divisibili per 11, infatti, per il
+    criterio di congruenza modulo 11:
+
+    \begin{equation*}
+        [\overline{abccba}]_{11} = [-a + b - c + a - b + c]_{11} = [0]_{11}
+    \end{equation*}
+
+    Dobbiamo quindi determinare quanti numeri palindromi di 6 cifre sono divisibili per 3.
+    Per il criterio di congruenza modulo 3 risulta:
+    \begin{align*}
+        [\overline{abccba}]_3 &= [a + b + c + c + b + a]_3 = \\
+        &= [2a + 2b + 2c]_3 = \\
+        &= [2(a+b+c)]_3 = \\
+        &= [2]_3[a + b + c]_3 \\
+        &= [2]_3[\overline{abc}]_3
+    \end{align*}
+
+    Quindi se vogliamo che $\overline{abccba}$ sia divisibile per 3, visto che 2 non lo è, è necessario che $a + b + c$
+    sia divisibile per 3.
+
+    A questo punto ti propongo due soluzioni.
+
+    \bigskip
+    \textbf{Soluzione velocissima}
+
+    Dobbiamo determinare quanti sono i numeri di tre cifre che sono divisibili per 3.
+
+    I numeri di 3 cifre vanno da 100 a 999 e in totale solo 900.
+    Solo uno ogni tre di questi numeri è divisibile per 100, quindi quelli divisibili per 3 sono:
+
+    \begin{equation*}
+        900 : 3 = 300
+    \end{equation*}
+
+    \bigskip
+    \textbf{Soluzione più lunga}
+
+    Continuando con il criterio di congruenza modulo 3 possiamo scrivere:
+
+    \begin{equation*}
+        [a + b + c]_3 = [a]_3 + [b]_3 + [c]_3
+    \end{equation*}
+
+    Affinchè tale numero sia divisibile per 3 dobbiamo scegliere dei valori di $a$, $b$ e $c$ tali che:
+
+    \begin{equation*}
+        [a]_3 + [b]_3 + [c]_3 = [0]_3
+    \end{equation*}
+
+    Dobbiamo ora andare a contare quante solo le combinazioni di $a$, $b$ e $c$ che soddisfano tale vincolo. Anzi: lo
+    faremo in due passaggi: prima contiamo le combinazioni delle classi di congruenza $[a]_3$, $[b]_3$ e $[c]_3$ e poi
+    da queste passiamo alle cifre.
+
+    Nota che scelta la classe di congruenza per $[a]_3$ e per $[b]_3$, resta automaticamente determinata la classe di
+    congruenza per $[c]_3$.
+    Per esempio, se $[a]_3 = [1]_3$ e $[b]_3 = [0]$, allora $[c]_3 =  [2]_3$, infatti:
+
+    \begin{equation*}
+        [1]_3 + [0]_3 + [2]_3 = [3]_3 = [0]_3
+    \end{equation*}
+
+    Allora le possibili combinazioni (considerando le classi di congruenza) sono date dalle 3 possibili scelte di $[a]_3$
+    e dalle 3 possibili scelte di $[b]_3$:
+
+    \begin{table}[H]
+        \label{tab:distrettuali_2019_1}
+        \centering
+        \begin{tabular}{ccc}
+            \toprule
+            $[a]_3$ & $[b]_3$ & $[c]_3$ \\
+            \midrule
+            $[0]_3$ & $[0]_3$ & $[0]_3$ \\
+            $[0]_3$ & $[1]_3$ & $[1]_3$ \\
+            $[0]_3$ & $[2]_3$ & $[2]_3$ \\
+            $[1]_3$ & $[0]_3$ & $[2]_3$ \\
+            $[1]_3$ & $[1]_3$ & $[1]_3$ \\
+            $[1]_3$ & $[2]_3$ & $[0]_3$ \\
+            $[2]_3$ & $[0]_3$ & $[1]_3$ \\
+            $[2]_3$ & $[1]_3$ & $[0]_3$ \\
+            $[2]_3$ & $[2]_3$ & $[2]_3$ \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    Ora sostituiamo le classi di congruenza con la quantità di scelte che abbiamo per ciascuna di esse.
+    Ovviamente non conteremo tutti gli infiniti numeri interi che appartengono alle classi di congruenza, ma solo le
+    cifre singole.
+    Dobbiamo quindi tenere conto che:
+    \begin{itemize}
+        \item $[0]_3 = \{0, 3, 6, 8\}$ contiene 4 elementi, ma se usata per la prima cifra $[a]_3$ non possiamo
+        considerare la cifra 0 altrimenti avremo un numero di sole 5 cifre;
+        \item $[1]_3 = \{1, 4, 7\}$ contiene 3 elementi;
+        \item $[2]_3 = \{2, 5, 8\}$ contiene 3 elementi.
+    \end{itemize}
+
+    Inoltre, per il principio di moltiplicazione, le possibili scelte per ogni riga saranno date dal prodotto delle
+    scelte delle singole cifre.
+    Quindi:
+
+    \begin{table}[H]
+        \label{tab:distrettuali_2019_2}
+        \centering
+        \begin{tabular}{ccccccc}
+            \toprule
+            $[a]_3$ & $[b]_3$ & $[c]_3$ & scelte di $[a]_3$ & scelte di $[b]_3$ & scelte di $[c]_3$ & scelte totali \\
+            \midrule
+            $[0]_3$ & $[0]_3$ & $[0]_3$ & 3 & 4 & 4 & 48 \\
+            $[0]_3$ & $[1]_3$ & $[1]_3$ & 3 & 3 & 3 & 27 \\
+            $[0]_3$ & $[2]_3$ & $[2]_3$ & 3 & 3 & 3 & 27 \\
+            $[1]_3$ & $[0]_3$ & $[2]_3$ & 3 & 4 & 3 & 36 \\
+            $[1]_3$ & $[1]_3$ & $[1]_3$ & 3 & 3 & 3 & 27 \\
+            $[1]_3$ & $[2]_3$ & $[0]_3$ & 3 & 3 & 4 & 36 \\
+            $[2]_3$ & $[0]_3$ & $[1]_3$ & 3 & 4 & 3 & 36 \\
+            $[2]_3$ & $[1]_3$ & $[0]_3$ & 3 & 3 & 4 & 36 \\
+            $[2]_3$ & $[2]_3$ & $[2]_3$ & 3 & 3 & 3 & 27 \\
+            \midrule
+            & & & & & & 300 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \bigskip
+    \textbf{Risposta:}
+    I numeri palindromi di 6 cifre divisibili per 33 sono 300.
+\end{proof}
+
+\begin{proof}[Soluzione esercizio~\ref{ex:francesco_1}]
+    Il numero $\overline{abcabc}$ può essere scomposto in:
+
+    \begin{equation*}
+        \overline{abcabc} = \overline{abc} \cdot 1001 = \overline{abc} \cdot 7 \cdot 11 \cdot 13
+    \end{equation*}
+
+    Il divisore 2023 invece si scompone in:
+
+    \begin{equation*}
+        2023 = 7 \cdot 17^2
+    \end{equation*}
+
+    Se 2023 divide $\overline{abcabc}$ significa allora che:
+
+    \begin{equation*}
+        \exists k \in \Z: \overline{abc} \cdot 7 \cdot 11 \cdot 13 = k \cdot 7 \cdot 17^2
+    \end{equation*}
+
+    Possiamo semplificare per 7:
+
+    \begin{equation*}
+        \exists k \in \Z: \overline{abc} \cdot 11 \cdot 13 = k \cdot 17^2
+    \end{equation*}
+
+    Non abbiamo altri fattori in comune da semplificare, quindi è necessario che $\overline{abc}$ sia divisibile per
+    $17^2$.
+
+    Dobbiamo quindi determinare quanti numeri di tre cifre sono divisibili per $17^2 = 289$.
+
+    289 è maggiore di 250, quindi i numeri cercati sono meno di 4:
+
+    \begin{equation*}
+        1000 : 289 < 1000 : 250 = 4
+    \end{equation*}
+
+    289 è minore di $333 \sim \frac{1000}{3}$, quindi ci sono almeno 3 multipli di 3 cifre:
+
+    \begin{equation*}
+        1000 : 289 > 1000 : \frac{1000}{3} = 3
+    \end{equation*}
+
+    \bigskip
+    \textbf{Risposta:}
+    I numeri nella forma $\overline{abcabc}$ divisibili per 2023 sono 3.
+
+    Infatti sono: 289289, 578578 e 867867.
+
+\end{proof}
