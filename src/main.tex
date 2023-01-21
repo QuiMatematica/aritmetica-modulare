@@ -36,7 +36,11 @@
 \mdtheorem[style=exercisestyle]{esercizio}{Esercizio}[chapter]
 
 \newmdenv[linecolor=red,linewidth=2pt]{dimostrazione}
-\newmdenv[linecolor=blue,linewidth=2pt]{soluzione}
+\newmdenv[
+	linecolor=blue,linewidth=2pt,
+	subtitlebelowline=false,subtitleaboveline=false,
+	subtitlebackgroundcolor=blue!20,
+]{soluzione}
 
 \newcommand{\Z}[0]{\ensuremath{ \mathbb{Z} }}
 \newcommand{\valoreassoluto}[1]{\ensuremath{ \lvert #1 \rvert }}

@@ -2,7 +2,110 @@
 \label{ch:soluzioni}
 
 \begin{soluzione}
-    \emph{Soluzione esercizio~\ref{ex:distrettuali_2019}}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2019}}
+    La condizione
+    \begin{quotation}
+        $n$ e $n + 5$ devono avere lo stesso colore per ogni $n$ intero
+    \end{quotation}
+    ci permette di operare considerando solo le classi di congruenza modulo 5.
+    Infatti $n$ e $n + 5$ si trovano nella stessa classe di congruenza modulo 5:
+    \begin{align*}
+        [n + 5]_5 &= [n]_5 + [5]_5 = && \text{per la proprietà della somma di classi} \\
+        &= [n]_5 + [0]_5 = && \text{perché $5 \modulo 5 = 0$} \\
+        &= [n]_5 && \text{perché $[0]_5$ è l'elemento neutro della somma}
+    \end{align*}
+
+    Dal momento che in questo esercizio avremo a che fare solo con classi modulo 5 non verrà più scecificato il modulo
+    nelle notazioni.
+
+    I numeri di ciascuna classe di congruenza avranno lo stesso colore.
+    Dobbiamo quindi determinare in quanti modi possiamo colorare le 5 classi.
+    Nella colorazione dobbiamo rispettare anche la seconda condizione:
+    \begin{quotation}
+        se $ab$ è bianco, allora almeno uno tra $a$ e $b$ deve essere bianco.
+    \end{quotation}
+
+    Le classi di congruenza si comportano bene con il prodotto tra numeri, quindi posso modificare la condizione in:
+    \begin{quotation}
+        se $[ab]$ è bianco, allora almeno uno tra $[a]$ e $[b]$ deve essere bianco.
+    \end{quotation}
+
+    Abbiamo quindi bisogno di capire come si comportano le moltiplicazioni con le classi di congruenza modulo 5.
+    Costruiamo quindi la tavola pitagorica (o \emph{tavola di Cayley}) del prodotto con le classi di congruenza:
+
+    \begin{table}[H]
+        \label{tab:distrettuali_2019}
+        \centering
+        \begin{tabular}{c|ccccc}
+            \cdot & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ \\
+            \midrule
+            $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ \\
+            $[1]$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ \\
+            $[2]$ & $[0]$ & $[2]$ & $[4]$ & $[1]$ & $[3]$ \\
+            $[3]$ & $[0]$ & $[3]$ & $[1]$ & $[4]$ & $[2]$ \\
+            $[4]$ & $[0]$ & $[4]$ & $[3]$ & $[2]$ & $[1]$
+        \end{tabular}
+    \end{table}
+
+    Questa tabella ci permette di capire con quali prodotti otteniamo le classi di congruenza:
+    \begin{itemize}
+        \item $[0] = [0][a] \,\,\forall [a]$;
+        \item $[1] = [1][1] = [2][3] = [4][4]$;
+        \item $[2] = [1][2] = [3][4]$;
+        \item $[3] = [1][3] = [2][4]$;
+        \item $[4] = [1][4] = [2][2] = [3][3]$.
+    \end{itemize}
+
+    Ora possiamo capire come dobbiamo comportarci se coloriamo di bianco una delle classi di congruenza:
+    \begin{itemize}
+        \item se coloriamo di bianco la classe $[0]$ possiamo colorare le altre classi di qualunque altro colore,
+        e il vincolo è rispettato;
+        \item se coloriamo di bianco la classe $[1]$ dobbiamo colorare di bianco anche la classe $[4]$ (visto che otteniamo un
+        elemento di $[1]$ moltiplicando tra loro due qualunque elementi di $[4]$) e, di conseguenza, dobbiamo colorare
+        di bianco anche le classi $[2]$ e $[3]$ (visto che otteniamo un elemento di $[4]$ moltiplicando due elementi di
+        $[2]$ o due elementi di $[3]$); quindi se coloro di bianco $[1]$ devo colorare anche $[2]$, $[3]$ e $[4]$;
+        \item se coloriamo di bianco la classe $[2]$ dobbiamo colorare di bianco anche la classe $[3]$ oppure la classe
+        $[4]$; nel primo caso non ho bisogno di colorare altro di bianco;
+        nel secondo caso devo colorare di bianco anche la classe $[3]$;
+        \item se coloriamo di bianco la classe $[3]$ dobbiamo colorare di bianco anche la classe $[2]$ oppure la classe
+        $[4]$; nel primo caso non ho bisogno di colorare altro di bianco;
+        nel secondo caso devo colorare di bianco anche la classe $[2]$;
+        \item se coloriamo di bianco la classe $[4]$ dobbiamo colorare di bianco anche la classe $[2]$ e $[3]$.
+    \end{itemize}
+
+    Riassumendo, abbiamo le seguenti situazioni:
+    \begin{itemize}
+        \item coloriamo di bianco le classi $[1]$, $[2]$, $[3]$ e $[4]$:
+        possiamo colorare la classe $[0]$ di qualunque colore;
+        abbiamo quindi 6 possibili scelte legate al colore che daremo alla classe $[0]$;
+        \item coloriamo di bianco le classi $[2]$, $[3]$ e $[4]$ e la classe $[1]$ di un colore che non sia bianco;
+        anche in questo caso possiamo colorare la classe $[0]$ di qualunque colore (compreso il bianco);
+        abbiamo quindi 6 possibili scelte per il colore di $[0]$ e 5 possibile scelte (escludiamo infatti il bianco)
+        per la classe $[1]$;
+        \item coloriamo di bianco le classi $[2]$ e $[3]$ e le classi $[1]$ e $[4]$ di colori che non siano il bianco;
+        anche in questo caso possiamo colorare la classe $[0]$ di qualunque colore (compreso il bianco);
+        abbiamo quindi 6 possibili scelte per il colore di $[0]$, 5 possibili scelte per $[1]$ e 5 possibili scelte
+        per $[4]$;
+        \item coloriamo le classi $[1]$, $[2]$, $[3]$ e $[4]$ di una qualunque combinazione di colori che non includa
+        il bianco;
+        siamo ancora liberi di colorare $[0]$ con qualunque colore, compreso il bianco;
+        abbiamo quindi 6 possibili scelte per il colore di $[0]$, 5 per $[1]$, 5 per $[2]$, 5 per $[3]$ e 5 per $[4]$.
+    \end{itemize}
+
+    La cosa importante è avere coscienza che le quattro casistiche viste sopra sono \emph{disgiunte}, ovvero non c'è
+    nessun caso che compare più di una volta.
+    E' importante perché, se i casi non fossero disgiunti, rischierei di contare una possibilità più volte.
+
+    Sommiamo quindi tutte le possibili scelte:
+    \begin{multline*}
+        6 + 6 \cdot 5 + 6 \cdot 5 \cdot 5 + 6 \cdot 5 \cdot 5 \cdot 5 \cdot 5 = \\
+        = 6(1 + 5 + 5^2 + 5^4) = 6(1 + 5 + 25 + 625) = 6 \cdot 656 = \\
+        = 3936
+    \end{multline*}
+\end{soluzione}
+
+\begin{soluzione}
+    \emph{Soluzione esercizio~\ref{ex:distrettuali_2021}}
     I numeri palindromi di 6 cifre hanno la seguente struttura:
 
     \begin{equation*}
