@@ -1,6 +1,104 @@
 \chapter{Soluzioni}
 \label{ch:soluzioni}
 
+
+\begin{soluzione}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018_1}}
+    Chiamiamo $n$ il numero di risposte corrette date da Camilla.
+    Quindi ha sbagliato $90 - n$ risposte.
+
+    Per le risposte corrette ottiene $5n$ punti.
+
+    Per le risposte sbagliate ottiene $-1(90-n)$ punti.
+
+    In totale ottiene:
+    \[
+        5n - 1(90 - n) = 5n - 90 + n = 6n - 90 = 6(n - 15)
+    \]
+
+    Quindi il punteggio di Camilla deve essere divisibile per 6.
+    L'unico punteggio tra quelli proposti non divisibile per 6 è il 116.
+
+
+
+\end{soluzione}
+
+\begin{soluzione}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018_15}: parte 1)}
+    L'esercizio ci chiede di trovare tutti i numeri interi positivi di due cifre $\overline{ab}$ che sono divisibili
+    per $a$ e per $b$:
+    \begin{gather*}
+        a \divisore \overline{ab} \\
+        b \divisore \overline{ab}
+    \end{gather*}
+
+    Il divisore non può essere nullo, quindi $a$ e $b$ non sono nulli.
+
+    Passando alle classi di congruenza, per quanto riguarda il divisore $a$ abbiamo che:
+    \begin{gather*}
+        a \divisore \overline{ab} \\
+        [\overline{ab}]_a = [0]_a \\
+        [10]_a[a]_a + [b]_a = [0]_a \\
+        [10]_a[0]_a + [b]_a = [0]_a \\
+        [b]_a = [0]_a \\
+        a \divisore b \\
+        \exists k : b = ka
+    \end{gather*}
+
+    Invece per quanto riguarda il divisore $b$ abbiamo che:
+    \begin{gather*}
+        b \divisore \overline{ab} \\
+        [\overline{ab}]_b = [0]_b \\
+        [10]_b[a]_b + [b]_b = [0]_b \\
+        [10]_b[a]_b + [0]_b = [0]_b \\
+        [10]_b[a]_b = [0]_b \\
+        [10a]_b = [0]_b \\
+        b \divisore 10a \\
+        ka \divisore 10a \\
+        k \divisore 10
+    \end{gather*}
+
+    Riassumendo abbiamo ottenuto due condizioni che dobbiamo rispettare:
+    \begin{gather*}
+        b = ka \\
+        k \divisore 10
+    \end{gather*}
+
+    I valori possibili di $k$ sono i divisori di 10 che fanno in modo che $b$ sia una cifra.
+    Essi sono: 1, 2 e 5.
+
+    Enumeriamo quindi i casi possibili:
+    \begin{itemize}
+        \item $k = 1 \,\Longrightarrow\, b = a$: ottengo i numeri 11, 22, 33, 44, 55, 66, 77, 88, 99;
+        \item $k = 2 \,\Longrightarrow\, b = 2a$: ottengo i numeri 12, 24, 36, 48;
+        \item $k = 5 \,\Longrightarrow\, b = 5a$: ottengo il numero 15.
+    \end{itemize}
+
+    \bigskip
+    \mdfsubtitle{Risposta}
+    Gli interi positivi cercati sono: 11, 12, 15, 22, 24, 33, 36, 44, 48, 55, 66, 77, 88, 99.
+
+    \bigskip
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018_15}: parte 2)}
+    Ora abbiamo a che fare con numeri di due o più cifre.
+    Non possiamo più usare la notazione posizionale, ma possiamo comunque scomporre il numero $n$ in $10a + b$,
+    dove $a$ è un qualunque numero intero maggiore di 1, e $b$ è una singola cifra.
+
+    Il numero $n = 10a + b$ deve essere divisibile per $a$, quindi:
+    \begin{gather*}
+        a \divisore 10a + b \\
+        [10a + b]_a = [0]_a \\
+        [10]_a[a]_a + [b]_a = [0]_a \\
+        [10]_a[0]_a + [b]_a = [0]_a \\
+        [b]_a = [0]_a \\
+        a \divisore b
+    \end{gather*}
+
+    Affinché $a$ sia un divisore di $b$ è necessario che $a \le b$.
+    Visto che $b$ è una singola cifra, ovvero $b \le 9$, deduciamo che anche $a \le 9$.
+    Quindi il numero numero $n = 10a + b$ è composto al più di 2 cifre.
+\end{soluzione}
+
 \begin{soluzione}
     \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2019}}
     La condizione
@@ -111,82 +209,6 @@
     \bigskip
     \mdfsubtitle{Risposta}
     Jacopo può colorare gli interi in 3936 modi diversi.
-\end{soluzione}
-
-\begin{soluzione}
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018}: parte 1)}
-    L'esercizio ci chiede di trovare tutti i numeri interi positivi di due cifre $\overline{ab}$ che sono divisibili
-    per $a$ e per $b$:
-    \begin{gather*}
-        a \divisore \overline{ab} \\
-        b \divisore \overline{ab}
-    \end{gather*}
-
-    Il divisore non può essere nullo, quindi $a$ e $b$ non sono nulli.
-
-    Passando alle classi di congruenza, per quanto riguarda il divisore $a$ abbiamo che:
-    \begin{gather*}
-        a \divisore \overline{ab} \\
-        [\overline{ab}]_a = [0]_a \\
-        [10]_a[a]_a + [b]_a = [0]_a \\
-        [10]_a[0]_a + [b]_a = [0]_a \\
-        [b]_a = [0]_a \\
-        a \divisore b \\
-        \exists k : b = ka
-    \end{gather*}
-
-    Invece per quanto riguarda il divisore $b$ abbiamo che:
-    \begin{gather*}
-        b \divisore \overline{ab} \\
-        [\overline{ab}]_b = [0]_b \\
-        [10]_b[a]_b + [b]_b = [0]_b \\
-        [10]_b[a]_b + [0]_b = [0]_b \\
-        [10]_b[a]_b = [0]_b \\
-        [10a]_b = [0]_b \\
-        b \divisore 10a \\
-        ka \divisore 10a \\
-        k \divisore 10
-    \end{gather*}
-
-    Riassumendo abbiamo ottenuto due condizioni che dobbiamo rispettare:
-    \begin{gather*}
-        b = ka \\
-        k \divisore 10
-    \end{gather*}
-
-    I valori possibili di $k$ sono i divisori di 10 che fanno in modo che $b$ sia una cifra.
-    Essi sono: 1, 2 e 5.
-
-    Enumeriamo quindi i casi possibili:
-    \begin{itemize}
-        \item $k = 1 \,\Longrightarrow\, b = a$: ottengo i numeri 11, 22, 33, 44, 55, 66, 77, 88, 99;
-        \item $k = 2 \,\Longrightarrow\, b = 2a$: ottengo i numeri 12, 24, 36, 48;
-        \item $k = 5 \,\Longrightarrow\, b = 5a$: ottengo il numero 15.
-    \end{itemize}
-
-    \bigskip
-    \mdfsubtitle{Risposta}
-    Gli interi positivi cercati sono: 11, 12, 15, 22, 24, 33, 36, 44, 48, 55, 66, 77, 88, 99.
-
-    \bigskip
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018}: parte 2)}
-    Ora abbiamo a che fare con numeri di due o più cifre.
-    Non possiamo più usare la notazione posizionale, ma possiamo comunque scomporre il numero $n$ in $10a + b$,
-    dove $a$ è un qualunque numero intero maggiore di 1, e $b$ è una singola cifra.
-
-    Il numero $n = 10a + b$ deve essere divisibile per $a$, quindi:
-    \begin{gather*}
-        a \divisore 10a + b \\
-        [10a + b]_a = [0]_a \\
-        [10]_a[a]_a + [b]_a = [0]_a \\
-        [10]_a[0]_a + [b]_a = [0]_a \\
-        [b]_a = [0]_a \\
-        a \divisore b
-    \end{gather*}
-
-    Affinché $a$ sia un divisore di $b$ è necessario che $a \le b$.
-    Visto che $b$ è una singola cifra, ovvero $b \le 9$, deduciamo che anche $a \le 9$.
-    Quindi il numero numero $n = 10a + b$ è composto al più di 2 cifre.
 \end{soluzione}
 
 \begin{soluzione}
@@ -329,25 +351,21 @@
 \begin{soluzione}
     \mdfsubtitle{Soluzione esercizio~\ref{ex:francesco_1}}
     Il numero $\overline{abcabc}$ può essere scomposto in:
-
     \begin{equation*}
         \overline{abcabc} = \overline{abc} \cdot 1001 = \overline{abc} \cdot 7 \cdot 11 \cdot 13
     \end{equation*}
 
     Il divisore 2023 invece si scompone in:
-
     \begin{equation*}
         2023 = 7 \cdot 17^2
     \end{equation*}
 
     Se 2023 divide $\overline{abcabc}$ significa allora che:
-
     \begin{equation*}
         \exists k \in \Z: \overline{abc} \cdot 7 \cdot 11 \cdot 13 = k \cdot 7 \cdot 17^2
     \end{equation*}
 
     Possiamo semplificare per 7:
-
     \begin{equation*}
         \exists k \in \Z: \overline{abc} \cdot 11 \cdot 13 = k \cdot 17^2
     \end{equation*}
@@ -358,13 +376,11 @@
     Dobbiamo quindi determinare quanti numeri di tre cifre sono divisibili per $17^2 = 289$.
 
     289 è maggiore di 250, quindi i numeri cercati sono meno di 4:
-
     \begin{equation*}
         1000 : 289 < 1000 : 250 = 4
     \end{equation*}
 
     289 è minore di $333 \sim \frac{1000}{3}$, quindi ci sono almeno 3 multipli di 3 cifre:
-
     \begin{equation*}
         1000 : 289 > 1000 : \frac{1000}{3} = 3
     \end{equation*}
@@ -374,5 +390,21 @@
     I numeri nella forma $\overline{abcabc}$ divisibili per 2023 sono 3.
 
     Essi sono: 289289, 578578 e 867867.
+\end{soluzione}
 
+\begin{soluzione}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:francesco_2}}
+    Il numero $\overline{abcabc}$ può essere scomposto in:
+
+    \begin{equation*}
+        \overline{abcabc} = \overline{abc} \cdot 1001 = \overline{abc} \cdot 7 \cdot 11 \cdot 13
+    \end{equation*}
+
+    Affinché $\overline{abcabc}$ sia un quadrato perfetto è quindi necessario che $\overline{abc}$ sia divisibile per
+    7, 11 e 13, ovvero deve essere divisibile per 1001.
+    Ma il più piccolo numero (diverso da 0) divisibile per 1001 è 1001, che è composto di 4 cifre, non di 3.
+
+    \bigskip
+    \mdfsubtitle{Risposta}
+    Non esistono numeri nella forma $\overline{abcabc}$ che sono quadrati perfetti.
 \end{soluzione}

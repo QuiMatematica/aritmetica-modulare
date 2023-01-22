@@ -162,7 +162,7 @@ Per indicare la classe di congruenza a cui appartiene un interno $a$, relativame
 
 Talvolta, quando si lavora con un unico modulo o quando è chiaro quale modulo si sta usando, si può omettere il pedice $m$.
 
-Tale insieme conterrà tutti i numeri interi che sono congruenti modulo $m$ dell'elemento $a$ scelto, per cui possiamo scrivere:
+L'insieme $[a]_m$ contiene tutti i numeri interi che sono congruenti modulo $m$ dell'elemento $a$ scelto, per cui possiamo scrivere:
 \begin{equation*}
     [a]_m = \{z \in \Z \mid \congruenti{z}{a}{m}\}
 \end{equation*}
@@ -180,6 +180,18 @@ Per cui vale anche questa definizione:
 \begin{equation*}
     [a]_m = \{z \in \Z \mid z \modulo m = a\} \quad \text{con } 0 \le a < m
 \end{equation*}
+
+Quindi possiamo dedurre le seguenti equivalenze:
+\begin{gather*}
+    [z]_m = [a]_m \sse z \modulo m = a \quad \text{con } 0 \le a < m \\
+    [z]_m = [0]_m \sse z \modulo m = 0 \sse m \divisore z
+\end{gather*}
+
+Infine è immediato osservare che:
+\begin{gather*}
+    [m]_m = [0]_m \\
+    [am]_m = [0]_m
+\end{gather*}
 
 Le classi di congruenza formano un nuovo insieme che indicheremo con $\Z_m$:
 \begin{equation*}
@@ -297,3 +309,37 @@ Queste nuove operazioni mi permettono di semplificare i calcoli quando voglio ca
         (73 \cdot 26 + 94) \modulo 7 = 4
     \end{equation*}
 \end{esercizio}
+
+\section{Proprietà delle operazioni tra classi}
+\label{sec:proprieta_operazioni_classi}
+
+\begin{teorema}[Proprietà della somma]
+    \begin{itemize}
+        \item proprietà commutativa \\ $[a]_m + [b]_m = [b]_m + [a]_m$
+        \item proprietà associativa \\ $([a]_m + [b]_m) + [c]_m = [a]_m + ([b]_m + [c]_m)$
+        \item $[0]_m$ è l'elemento neutro della somma \\ $[0]_m + [a]_m = [a]_m + [0]_m = [0]_m$
+        \item ogni $[a]_m$ ha un \textbf{opposto}: $[m-a]_m$ \\ $[a]_m + [m-a]_m = [m-a]_m + [a]_m = [0]_m$
+    \end{itemize}
+\end{teorema}
+
+\begin{teorema}[Proprietà del prodotto]
+    \begin{itemize}
+        \item proprietà commutativa \\ $[a]_m \cdot [b]_m = [b]_m \cdot [a]_m$
+        \item proprietà associativa \\ $([a]_m \cdot [b]_m) \cdot [c]_m = [a]_m \cdot ([b]_m \cdot [c]_m)$
+        \item $[1]_m$ è l'elemento neutro del prodotto \\ $[0]_m \cdot [a]_m = [a]_m \cdot [0]_m = [0]_m$
+    \end{itemize}
+\end{teorema}
+
+Sebbene il prodotto si \emph{comporti bene} in $\Z_m$, perdiamo alcune proprietà che invece
+abbiamo nell'aritmetica in $\Z$.
+
+Un esempio è la \textbf{legge dell'annullamento del prodotto}: in $\Z$ se il prodotto di due numeri è uguale a zero,
+almeno uno dei due numeri è nullo:
+\begin{equation*}
+    ab = 0 \sse a = 0 \lor b = 0
+\end{equation*}
+
+In $\Z_m$ questo non è generalmente vero, per esempio:
+\begin{equation*}
+    [2]_{10} \cdot [5]_{10} = [10]_{10} = [0]_{10}
+\end{equation*}
