@@ -1,81 +1,92 @@
 \chapter{La matematica dell'orologio}
+\label{ch:matematica_orologio}
 
-Consideriamo un orologio analogico, e consideriamo la sola lancetta delle ore. I numeri mostrati sul quadrante corrispondono alle ore.
+Consideriamo un orologio analogico, e consideriamo la sola lancetta delle ore.
+I numeri mostrati sul quadrante corrispondono alle ore.
 
-In questi esercizi trascuriamo la differenza tra ore antimeridiane e ore pomeridiane: vogliamo concentrarci solo al numero che definisce l'ora e al numero di giri che compie la lancetta delle ore.
+In questi esercizi trascuriamo la differenza tra ore antimeridiane e ore pomeridiane: vogliamo concentrarci solo al
+numero che definisce l'ora e al numero di giri che compie la lancetta delle ore.
 
-Inoltre, visto che avremo a che fare solo con numeri interi, consideriamo solo ore "intere", con la lancetta che punta precisamente ad un numero, senza considerare tutte le posizioni intermedie. 
-
-    \begin{esercizio}
-        A quanti giri della lancetta delle ore corrispondono 120 ore?
-    \end{esercizio}
-    \begin{soluzione}
-        Visto che un giro della lancetta delle ore corrisponde a 12 ore, in 120 ore la lancetta farà:
-        
-        \begin{equation*}
-            \text{giri} = (\text{ore}) : (\text{ore per giro}) = 120 : 12 = 10
-        \end{equation*}
-        
-        \emph{La lancetta compie 10 giri.}
-    \end{soluzione}
+Inoltre, visto che avremo a che fare solo con numeri interi, consideriamo solo ore \emph{intere}, con la lancetta che
+punta precisamente a un numero, senza considerare tutte le posizioni intermedie.
 
 \begin{esercizio}
-    Sono le 12. Che ore saranno tra 125 ore?
+    A quanti giri della lancetta delle ore corrispondono 120 ore?
+
+    \mdfsubtitle{Soluzione}
+    Visto che un giro della lancetta delle ore corrisponde a 12 ore, in 120 ore la lancetta farà:
+
+    \begin{equation*}
+        \text{giri} = (\text{ore}) : (\text{ore per giro}) = 120 : 12 = 10
+    \end{equation*}
+
+    \mdfsubtitle{Risposta}
+    La lancetta compie 10 giri.
 \end{esercizio}
-\begin{soluzione}
-    In questo caso non ci interessano i numeri di giri, ma ci interessa solo cosa succede dopo l'ultimo giro completo. Quello che ci interessa, quindi è il resto della divisione:
-    
+
+\newpage
+\begin{esercizio}
+    Sono le 12.
+    Che ore saranno tra 125 ore?
+
+    \mdfsubtitle{Soluzione}
+    In questo caso non ci interessano i numeri di giri, ma ci interessa solo cosa succede dopo l'ultimo giro completo.
+    Quello che ci interessa, quindi è il resto della divisione:
+
     \begin{equation*}
         \text{ore future} = 125 \modulo 12 = 5
     \end{equation*}
-    
-    \emph{Dopo 125 ore saranno le 5.}
-\end{soluzione}
 
-    \begin{esercizio}
-        Sono le 5. Che ore saranno tra 21 ore?
-    \end{esercizio}
-    \begin{soluzione}
-        \emph{Soluzione 1:}
-        Togliamo i giri inutili:
+    \mdfsubtitle{Risposta}
+    Tra 125 ore saranno le 5.
+\end{esercizio}
 
-        \begin{equation*}
-            \text{ore da aggiungere} = 21 \modulo 12 = 9
-        \end{equation*}
+\begin{esercizio}
+    Sono le 5.
+    Che ore saranno tra 21 ore?
 
-        Aggiungiamo queste ore alle ore attuali:
+    \mdfsubtitle{Soluzione 1}
 
-        \begin{equation*}
-            \text{ore future} = 5 + 9 = 14
-        \end{equation*}
+    Togliamo i giri inutili:
+    \begin{equation*}
+        \text{ore da aggiungere} = 21 \modulo 12 = 9
+    \end{equation*}
 
-        Ma sull'orologio non ho le ore 14, per cui devo togliere il giro inutile:
+    Aggiungiamo queste ore alle ore attuali:
+    \begin{equation*}
+        \text{ore future} = 5 + 9 = 14
+    \end{equation*}
 
-        \begin{equation*}
-            \text{ore normalizzate} = 14 \modulo 12 = 2
-        \end{equation*}
-    \end{soluzione}
-    \begin{soluzione}
-        \emph{Soluzione 2:}
-        Aggiunto le 21 ore alle 5 attuali:
+    Ma sull'orologio non ho le ore 14, per cui devo togliere il giro inutile:
+    \begin{equation*}
+        \text{ore normalizzate} = 14 \modulo 12 = 2
+    \end{equation*}
 
-        \begin{equation*}
-            21 + 5 = 26
-        \end{equation*}
+    \mdfsubtitle{Soluzione 2}
 
-        Tolgo i giri inutili:
+    Aggiunto le 21 ore alle 5 attuali:
+    \begin{equation*}
+        21 + 5 = 26
+    \end{equation*}
 
-        \begin{equation*}
-            26 \modulo 12 = 2
-        \end{equation*}
-    \end{soluzione}
+    Tolgo i giri inutili:
+    \begin{equation*}
+        26 \modulo 12 = 2
+    \end{equation*}
 
-Per come leggiamo l'orologio, le ore 2 e le ore 14 corrispondono alla stessa posizione della lancetta delle ore. Siamo talmente abituati che aggiungiamo in automatico 12 ore quando siamo nel pomeriggio.
+    \mdfsubtitle{Risposta}
+    Tra 21 ore saranno le 2.
+\end{esercizio}
 
-Se estendiamo questo concetto, ogni volta che aggiungiamo 12 ore la lancetta delle ore ritorna esattamente nel punto di partenza. Quindi possiamo dire che le 2, le 14, le 26, le 38, \dots sono di fatto la stessa ora. Inoltre, visto che abbiamo a che fare con i numeri interi che comprendono anche i numeri negativi, possiamo aggiungere a questi anche le ore -10, -22, -34, \dots.
+Per come leggiamo l'orologio, le ore 2 e le ore 14 corrispondono alla stessa posizione della lancetta delle ore.
+Siamo talmente abituati che aggiungiamo in automatico 12 ore quando siamo nel pomeriggio.
 
-Cosa hanno in comune tutti questi numeri? Se ne calcoliamo la divisioni per 12, tutti questi numeri presentano lo stesso resto:
+Se estendiamo questo concetto, ogni volta che aggiungiamo 12 ore la lancetta delle ore ritorna esattamente nel punto di partenza.
+Quindi possiamo dire che le 2, le 14, le 26, le 38, \dots sono di fatto la stessa ora.
+Inoltre, visto che abbiamo a che fare con i numeri interi che comprendono anche i numeri negativi, possiamo aggiungere a questi anche le ore -10, -22, -34, \dots.
 
+Cosa hanno in comune tutti questi numeri?
+Se ne calcoliamo la divisioni per 12, tutti questi numeri presentano lo stesso resto:
 \begin{gather*}
     2 \modulo 12 = 2 \\
     14 \modulo 12 = 2 \\
@@ -87,7 +98,6 @@ Cosa hanno in comune tutti questi numeri? Se ne calcoliamo la divisioni per 12, 
 \end{gather*}
 
 Possiamo quindi costruire 12 insiemi: uno per ogni ora del nostro quadrante:
-
 \begin{gather*}
     \{\dots, -24, -12, 0, 12, 24, \dots\} \\
     \{\dots, -23, -11, 1, 13, 25, \dots\} \\
@@ -97,12 +107,17 @@ Possiamo quindi costruire 12 insiemi: uno per ogni ora del nostro quadrante:
     \{\dots, -13, -1, 11, 23, 35, \dots\} 
 \end{gather*}
 
-Nota però un dettaglio. Sul quadrante del nostro orologio abbiamo un solo numero per ciascuno di questi insiemi. I numeri presenti sul quadrante corrispondono al resto della divisione per 12 degli elementi di questi insiemi\dots tranne in un caso.
+Nota però un dettaglio.
+Sul quadrante del nostro orologio abbiamo un solo numero per ciascuno di questi insiemi.
+I numeri presenti sul quadrante corrispondono al resto della divisione per 12 degli elementi di questi insiemi\dots tranne in un caso.
 
-Se prendo gli elementi del primo insieme, $\{\dots, -24, -12, 0, 12, 24, \dots\}$, e ne faccio la divisione per 12, ottengono come resto il numero 0. Mentre sul quadrante del nostro orologio troviamo il numero 12. Per questo motivo i matematici preferirebbero avere il numero 0 al posto del numero 12.
+Se prendo gli elementi del primo insieme, $\{\dots, -24, -12, 0, 12, 24, \dots\}$, e ne faccio la divisione per 12, ottengono come resto il numero 0.
+Mentre sul quadrante del nostro orologio troviamo il numero 12.
+Per questo motivo i matematici preferirebbero avere il numero 0 al posto del numero 12.
 
-Questi insiemi hanno molte caratteristiche interessanti. Per esempio se scelgo due insiemi e sommo un qualunque elemento del primo insieme con un qualunque elemento del secondo insieme ottengo sempre elementi di un terzo insieme: sempre lo stesso. Per esempio:
-
+Questi insiemi hanno molte caratteristiche interessanti.
+Per esempio se scelgo due insiemi e sommo un qualunque elemento del primo insieme con un qualunque elemento del secondo insieme ottengo sempre elementi di un terzo insieme: sempre lo stesso.
+Per esempio:
 \begin{gather*}
     3 + 5 = 8 \\
     15 + 5 = 20 \\

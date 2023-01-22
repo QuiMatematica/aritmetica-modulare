@@ -8,17 +8,17 @@
         $n$ e $n + 5$ devono avere lo stesso colore per ogni $n$ intero
     \end{quotation}
     ci permette di operare considerando solo le classi di congruenza modulo 5.
-    Infatti $n$ e $n + 5$ si trovano nella stessa classe di congruenza modulo 5:
+    Infatti $n$ e $n + 5$ si trovano nella stessa classe:
     \begin{align*}
-        [n + 5]_5 &= [n]_5 + [5]_5 = && \text{per la proprietà della somma di classi} \\
+        [n + 5]_5 &= [n]_5 + [5]_5 = && \text{per somma di classi} \\
         &= [n]_5 + [0]_5 = && \text{perché $5 \modulo 5 = 0$} \\
         &= [n]_5 && \text{perché $[0]_5$ è l'elemento neutro della somma}
     \end{align*}
 
-    Dal momento che in questo esercizio avremo a che fare solo con classi modulo 5 non verrà più scecificato il modulo
+    Dal momento che in questo esercizio avremo a che fare solo con classi modulo 5 non verrà più specificato il modulo
     nelle notazioni.
 
-    I numeri di ciascuna classe di congruenza avranno lo stesso colore.
+    Gli elementi di ciascuna classe di congruenza avranno tutti lo stesso colore.
     Dobbiamo quindi determinare in quanti modi possiamo colorare le 5 classi.
     Nella colorazione dobbiamo rispettare anche la seconda condizione:
     \begin{quotation}
@@ -27,17 +27,17 @@
 
     Le classi di congruenza si comportano bene con il prodotto tra numeri, quindi posso modificare la condizione in:
     \begin{quotation}
-        se $[ab]$ è bianco, allora almeno uno tra $[a]$ e $[b]$ deve essere bianco.
+        se $[ab]$ è bianca, allora almeno una tra $[a]$ e $[b]$ deve essere bianca.
     \end{quotation}
 
     Abbiamo quindi bisogno di capire come si comportano le moltiplicazioni con le classi di congruenza modulo 5.
-    Costruiamo quindi la tavola pitagorica (o \emph{tavola di Cayley}) del prodotto con le classi di congruenza:
+    Costruiamo quindi la tavola pitagorica (o \emph{tavola di Cayley}) del prodotto tra le classi di congruenza:
 
     \begin{table}[H]
         \label{tab:distrettuali_2019}
         \centering
         \begin{tabular}{c|ccccc}
-            \cdot & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ \\
+            $\cdot$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ \\
             \midrule
             $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ \\
             $[1]$ & $[0]$ & $[1]$ & $[2]$ & $[3]$ & $[4]$ \\
@@ -55,6 +55,11 @@
         \item $[3] = [1][3] = [2][4]$;
         \item $[4] = [1][4] = [2][2] = [3][3]$.
     \end{itemize}
+
+    Lo schema appena fatto ci dice, per esempio, che se noi moltiplichiamo due elementi qualunque della classe $[4]$
+    otteniamo un elemento della classe $[1]$ (per esempio: $9 \cdot 14 = 126$).
+    Se invece moltiplichiamo un qualunque elemento della classe $[2]$ con un qualunque elemento delle classe $[4]$
+    otteniamo un elemento della classe $[3]$ (per esempio: $7 \cdot 9 = 63$)
 
     Ora possiamo capire come dobbiamo comportarci se coloriamo di bianco una delle classi di congruenza:
     \begin{itemize}
@@ -94,18 +99,98 @@
 
     La cosa importante è avere coscienza che le quattro casistiche viste sopra sono \emph{disgiunte}, ovvero non c'è
     nessun caso che compare più di una volta.
-    E' importante perché, se i casi non fossero disgiunti, rischierei di contare una possibilità più volte.
+    Se i casi non fossero disgiunti, starei contando una possibilità più volte.
 
-    Sommiamo quindi tutte le possibili scelte:
+    Visto che i casi sono disgiunti, possiamo sommare tutte le possibili scelte:
     \begin{multline*}
         6 + 6 \cdot 5 + 6 \cdot 5 \cdot 5 + 6 \cdot 5 \cdot 5 \cdot 5 \cdot 5 = \\
         = 6(1 + 5 + 5^2 + 5^4) = 6(1 + 5 + 25 + 625) = 6 \cdot 656 = \\
         = 3936
     \end{multline*}
+
+    \bigskip
+    \mdfsubtitle{Risposta}
+    Jacopo può colorare gli interi in 3936 modi diversi.
 \end{soluzione}
 
 \begin{soluzione}
-    \emph{Soluzione esercizio~\ref{ex:distrettuali_2021}}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018}: parte 1)}
+    L'esercizio ci chiede di trovare tutti i numeri interi positivi di due cifre $\overline{ab}$ che sono divisibili
+    per $a$ e per $b$:
+    \begin{gather*}
+        a \divisore \overline{ab} \\
+        b \divisore \overline{ab}
+    \end{gather*}
+
+    Il divisore non può essere nullo, quindi $a$ e $b$ non sono nulli.
+
+    Passando alle classi di congruenza, per quanto riguarda il divisore $a$ abbiamo che:
+    \begin{gather*}
+        a \divisore \overline{ab} \\
+        [\overline{ab}]_a = [0]_a \\
+        [10]_a[a]_a + [b]_a = [0]_a \\
+        [10]_a[0]_a + [b]_a = [0]_a \\
+        [b]_a = [0]_a \\
+        a \divisore b \\
+        \exists k : b = ka
+    \end{gather*}
+
+    Invece per quanto riguarda il divisore $b$ abbiamo che:
+    \begin{gather*}
+        b \divisore \overline{ab} \\
+        [\overline{ab}]_b = [0]_b \\
+        [10]_b[a]_b + [b]_b = [0]_b \\
+        [10]_b[a]_b + [0]_b = [0]_b \\
+        [10]_b[a]_b = [0]_b \\
+        [10a]_b = [0]_b \\
+        b \divisore 10a \\
+        ka \divisore 10a \\
+        k \divisore 10
+    \end{gather*}
+
+    Riassumendo abbiamo ottenuto due condizioni che dobbiamo rispettare:
+    \begin{gather*}
+        b = ka \\
+        k \divisore 10
+    \end{gather*}
+
+    I valori possibili di $k$ sono i divisori di 10 che fanno in modo che $b$ sia una cifra.
+    Essi sono: 1, 2 e 5.
+
+    Enumeriamo quindi i casi possibili:
+    \begin{itemize}
+        \item $k = 1 \,\Longrightarrow\, b = a$: ottengo i numeri 11, 22, 33, 44, 55, 66, 77, 88, 99;
+        \item $k = 2 \,\Longrightarrow\, b = 2a$: ottengo i numeri 12, 24, 36, 48;
+        \item $k = 5 \,\Longrightarrow\, b = 5a$: ottengo il numero 15.
+    \end{itemize}
+
+    \bigskip
+    \mdfsubtitle{Risposta}
+    Gli interi positivi cercati sono: 11, 12, 15, 22, 24, 33, 36, 44, 48, 55, 66, 77, 88, 99.
+
+    \bigskip
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018}: parte 2)}
+    Ora abbiamo a che fare con numeri di due o più cifre.
+    Non possiamo più usare la notazione posizionale, ma possiamo comunque scomporre il numero $n$ in $10a + b$,
+    dove $a$ è un qualunque numero intero maggiore di 1, e $b$ è una singola cifra.
+
+    Il numero $n = 10a + b$ deve essere divisibile per $a$, quindi:
+    \begin{gather*}
+        a \divisore 10a + b \\
+        [10a + b]_a = [0]_a \\
+        [10]_a[a]_a + [b]_a = [0]_a \\
+        [10]_a[0]_a + [b]_a = [0]_a \\
+        [b]_a = [0]_a \\
+        a \divisore b
+    \end{gather*}
+
+    Affinché $a$ sia un divisore di $b$ è necessario che $a \le b$.
+    Visto che $b$ è una singola cifra, ovvero $b \le 9$, deduciamo che anche $a \le 9$.
+    Quindi il numero numero $n = 10a + b$ è composto al più di 2 cifre.
+\end{soluzione}
+
+\begin{soluzione}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2021}}
     I numeri palindromi di 6 cifre hanno la seguente struttura:
 
     \begin{equation*}
@@ -157,13 +242,14 @@
         [a + b + c]_3 = [a]_3 + [b]_3 + [c]_3
     \end{equation*}
 
-    Affinchè tale numero sia divisibile per 3 dobbiamo scegliere dei valori di $a$, $b$ e $c$ tali che:
+    Affinché tale numero sia divisibile per 3 dobbiamo scegliere dei valori di $a$, $b$ e $c$ tali che:
 
     \begin{equation*}
         [a]_3 + [b]_3 + [c]_3 = [0]_3
     \end{equation*}
 
-    Dobbiamo ora andare a contare quante solo le combinazioni di $a$, $b$ e $c$ che soddisfano tale vincolo. Anzi: lo
+    Dobbiamo ora andare a contare quante solo le combinazioni di $a$, $b$ e $c$ che soddisfano tale vincolo.
+    Anzi: lo
     faremo in due passaggi: prima contiamo le combinazioni delle classi di congruenza $[a]_3$, $[b]_3$ e $[c]_3$ e poi
     da queste passiamo alle cifre.
 
@@ -218,7 +304,7 @@
         \centering
         \begin{tabular}{ccccccc}
             \toprule
-            $[a]_3$ & $[b]_3$ & $[c]_3$ & scelte di $[a]_3$ & scelte di $[b]_3$ & scelte di $[c]_3$ & scelte totali \\
+            $[a]_3$ & $[b]_3$ & $[c]_3$ & scelte di $[a]_3$ & scelte di $[b]_3$ & scelte di $[c]_3$ & totali \\
             \midrule
             $[0]_3$ & $[0]_3$ & $[0]_3$ & 3 & 4 & 4 & 48 \\
             $[0]_3$ & $[1]_3$ & $[1]_3$ & 3 & 3 & 3 & 27 \\
@@ -236,12 +322,12 @@
     \end{table}
 
     \bigskip
-    \textbf{Risposta:}
+    \mdfsubtitle{Risposta}
     I numeri palindromi di 6 cifre divisibili per 33 sono 300.
 \end{soluzione}
 
 \begin{soluzione}
-    \emph{Soluzione esercizio~\ref{ex:francesco_1}}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:francesco_1}}
     Il numero $\overline{abcabc}$ può essere scomposto in:
 
     \begin{equation*}
@@ -284,7 +370,7 @@
     \end{equation*}
 
     \bigskip
-    \textbf{Risposta:}
+    \mdfsubtitle{Risposta}
     I numeri nella forma $\overline{abcabc}$ divisibili per 2023 sono 3.
 
     Essi sono: 289289, 578578 e 867867.

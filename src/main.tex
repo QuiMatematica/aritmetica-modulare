@@ -22,6 +22,8 @@
 	frametitlerule=true,%
 	frametitlebackgroundcolor=red!20,%
 	innertopmargin=\topskip,
+	subtitlebelowline=false,subtitleaboveline=false,
+	subtitlebackgroundcolor=red!10,
 }
 
 \mdfdefinestyle{exercisestyle}{%
@@ -29,6 +31,8 @@
 	frametitlerule=true,%
 	frametitlebackgroundcolor=blue!20,%
 	innertopmargin=\topskip,
+	subtitlebelowline=false,subtitleaboveline=false,
+	subtitlebackgroundcolor=blue!10,
 }
 
 \mdtheorem[style=definitionstyle]{definizione}{Definizione}[chapter]
@@ -37,6 +41,7 @@
 
 \newmdenv[linecolor=red,linewidth=2pt]{dimostrazione}
 \newmdenv[
+	subtitleaboveskip=0,
 	linecolor=blue,linewidth=2pt,
 	subtitlebelowline=false,subtitleaboveline=false,
 	subtitlebackgroundcolor=blue!20,
