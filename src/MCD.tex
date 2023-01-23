@@ -1,4 +1,5 @@
 \chapter{Massimo Comun Divisore}
+\label{ch:mcd}
 
 Introduciamo una notazione alternativa per il MCD di due numeri (si usa solo con due numeri, non con tre o più):
 \begin{equation*}
@@ -6,39 +7,47 @@ Introduciamo una notazione alternativa per il MCD di due numeri (si usa solo con
 \end{equation*}
 
 \section{Metodo delle sottrazioni successive}
+\label{sec:metodo_sottrazioni_successive}
 
-Il teorema~\ref{th:divisore_della_differenza} ci permette di introdurre una tecnica di calcolo del MCD alternativa a quella tipicamente insegnata a scuola (scomposizione e ricerca dei fattori comuni).
+Il teorema~\ref{th:divisore_della_differenza} ci permette d'introdurre una tecnica di calcolo del MCD alternativa a quella tipicamente insegnata a scuola (scomposizione e ricerca dei fattori comuni).
 
-Dati due numeri $a$ e $b$, l'MCD è il massimo dei numeri che contiene divisori di entrambi i numeri. Ma il teorema ci dice che se i due numeri hanno uno stesso divisore $m$, tale numero divide anche la differenza $a - b$.
+Dati due numeri $a$ e $b$, l'MCD è il massimo dei numeri che contiene divisori di entrambi i numeri.
+Ma il teorema ci dice che se i due numeri hanno uno stesso divisore $m$, tale numero divide anche la differenza $a - b$.
 
-\begin{mdframed}
 \begin{definizione}[Metodo delle sottrazioni successive]
 
-Possiamo calcolare l'MCD di due numeri sostituendo il maggiore con la differenza dei due. E poi reiteriamo questa sostituzione fino a quando i due numeri residui sono uguali.
+Possiamo calcolare l'MCD di due numeri sostituendo il maggiore con la differenza dei due.
+E poi reiteriamo questa sostituzione fino a quando i due numeri residui sono uguali.
 
 \end{definizione}
-\end{mdframed}
 
-\begin{mdframed}
-    \begin{esercizio}
-        Calcolare il MCD tra 6120 e 3780.
-    \end{esercizio}
-    \begin{proof}[Soluzione]
-        \begin{align*}
-            (6120, 3780) &= (2340, 3780) &&\text{perché } 6120 - 3780 = 2340 \\
-            &= (2340, 1440) &&\text{perché } 3780 - 2340 = 1440 \\
-            &= (900, 1440) &&\text{perché } 2340 - 1440 = 900 \\
-            &= (900, 540) &&\text{perché } 1440 - 900 = 540 \\
-            &= (360, 540) &&\text{perché } 900 - 540 = 360 \\
-            &= (360, 180) &&\text{perché } 540 - 360 = 180 \\
-            &= (180, 180) &&\text{perché } 360 - 180 = 180 \\
-            &= 180
-        \end{align*}
-    \end{proof}
-\end{mdframed}
+\begin{esercizio}
+    Calcolare il MCD tra 6120 e 3780.
+
+    \mdfsubtitle{Soluzione}
+    \begin{align*}
+        (6120, 3780) &= (2340, 3780) &&\text{perché } 6120 - 3780 = 2340 \\
+        &= (2340, 1440) &&\text{perché } 3780 - 2340 = 1440 \\
+        &= (900, 1440) &&\text{perché } 2340 - 1440 = 900 \\
+        &= (900, 540) &&\text{perché } 1440 - 900 = 540 \\
+        &= (360, 540) &&\text{perché } 900 - 540 = 360 \\
+        &= (360, 180) &&\text{perché } 540 - 360 = 180 \\
+        &= (180, 180) &&\text{perché } 360 - 180 = 180 \\
+        &= 180
+    \end{align*}
+\end{esercizio}
 
 Se poi dobbiamo calcolare anche il mcm, ci basta ricordare la relazione fondamentale:
-\begin{equation}
+\begin{equation*}
     a \cdot b = MCD(a, b) \cdot mcm(a, b)
-\end{equation}
+\end{equation*}
 
+\section{Esercizi}
+\label{sec:esercizi_mcd}
+
+\textbf{Esercizio 1}
+Dire se la seguente affermazione è vera o falsa;
+$p$ denota un numero primo, $a$ e $b$ generici numeri interi.
+\begin{equation*}
+    p \divisore (a, b) \allora p \divisore (a^2, ab)
+\end{equation*}

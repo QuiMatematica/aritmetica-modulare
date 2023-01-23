@@ -1,28 +1,25 @@
 \chapter{Aritmetica modulare}
+\label{ch:aritmetica_modulare}
 
 In questo capitolo $m$ indica un numero intero > 1.
 
 \section{Congruenza modulo $m$}
+\label{sec:congruenza_modulo_m}
 
-\begin{mdframed}
-    \begin{definizione}
-        Due numeri interi $a$ e $b$ sono \textbf{congruenti modulo $m$}, e si scrive:
-    
-        \begin{equation}
-            \congruenti{a}{b}{m}
-        \end{equation}
-        
-        se, divisi per $m$, danno lo stesso resto:
-    
-        \begin{equation}
-            \label{eq:def_congruenza} \congruenti{a}{b}{m} \sse a \modulo m = b \modulo m
-        \end{equation}
-    
-    \end{definizione}
-\end{mdframed}
+\begin{definizione}[Congruenza modulo $m$]
+    Due numeri interi $a$ e $b$ sono \textbf{congruenti modulo $m$}, e si scrive:
+    \begin{equation*}
+        \congruenti{a}{b}{m}
+    \end{equation*}
+
+    se, divisi per $m$, danno lo stesso resto:
+    \begin{equation}
+        \label{eq:def_congruenza} \congruenti{a}{b}{m} \sse a \modulo m = b \modulo m
+    \end{equation}
+
+\end{definizione}
 
 Per esempio, tornando al quadrante dell'orologio, possiamo dire che 2 e 14 sono \emph{congruenti modulo 12}, in quanto:
-
 \begin{equation*}
     \begin{cases}
         2 \modulo 12 = 2 \\
@@ -33,7 +30,6 @@ Per esempio, tornando al quadrante dell'orologio, possiamo dire che 2 e 14 sono 
 \end{equation*}
 
 Se $m = 3$, allora i numeri 22 e 67 sono \emph{congruenti modulo 3}, quanto:
-
 \begin{equation*}
     \begin{cases}
         22 \modulo 3 = 1 \\
@@ -43,103 +39,104 @@ Se $m = 3$, allora i numeri 22 e 67 sono \emph{congruenti modulo 3}, quanto:
     \congruenti{22}{67}{3}
 \end{equation*}
 
-\begin{mdframed}
-    \begin{teorema}
-        \label{th:congruenza}
-        \begin{equation}
-            \label{eq:th_congruenza} \congruenti{a}{b}{m} \sse m \divisore (a - b)
-        \end{equation}
-    \end{teorema}
-    \begin{proof}[Dimostrazione $\Longrightarrow$]
-        Faccio la divisione euclidea di $a$ e $m$ e ottengo un quoziente $q_a$ e un resto $r$:
-        \begin{equation*}
-            a = q_a m + r
-        \end{equation*}
+\begin{teorema}
+    \label{th:congruenza}
+    \begin{equation}
+        \label{eq:th_congruenza} \congruenti{a}{b}{m} \sse m \divisore (a - b)
+    \end{equation}
 
-        Faccio la divisione euclidea di $b$ e $m$ e ottengo un quoziente $q_b$ e lo stesso resto $r$ in quanto $a$ e $b$ sono congruenti modulo $m$ per ipotesi:
-        \begin{equation*}
-            b = q_b m + r
-        \end{equation*}
+    \mdfsubtitle{Dimostrazione $\Longrightarrow$}
 
-        Faccio ora la differenza tra $a$ e $b$ e ottengo:
-        \begin{align*}
-            a - b &= (q_a m + r) - (q_b m + r) = \\
-            &= q_a m + r - q_b m - r = \\
-            &= q_a m - q_b m = \\
-            &= (q_a - q_b)m
-        \end{align*}
+    Faccio la divisione euclidea di $a$ e $m$ e ottengo un quoziente $q_a$ e un resto $r$:
+    \begin{equation*}
+        a = q_a m + r
+    \end{equation*}
 
-        Quindi la divisione euclidea tra $a - b$ e $m$ dà resto 0, quindi $m$ divide la differenza $a - b$:
-        \begin{equation*}
-            m \divisore (a - b)
-        \end{equation*}
-    \end{proof}
-\end{mdframed}
+    Faccio la divisione euclidea di $b$ e $m$ e ottengo un quoziente $q_b$ e lo stesso resto $r$ in quanto $a$ e $b$ sono congruenti modulo $m$ per ipotesi:
+    \begin{equation*}
+        b = q_b m + r
+    \end{equation*}
 
-Per esempio, nella matematica dell'orologio, 45 e 21 sono congruenti modulo 12 perché 12 divide 45 - 21
+    Faccio ora la differenza tra $a$ e $b$ e ottengo:
+    \begin{align*}
+        a - b &= (q_a m + r) - (q_b m + r) = \\
+        &= q_a m + r - q_b m - r = \\
+        &= q_a m - q_b m = \\
+        &= (q_a - q_b)m
+    \end{align*}
 
+    Quindi la divisione euclidea tra $a - b$ e $m$ dà resto 0, quindi $m$ divide la differenza $a - b$:
+    \begin{equation*}
+        m \divisore (a - b)
+    \end{equation*}
+
+\end{teorema}
+
+Per esempio, nella matematica dell'orologio, 45 e 21 sono congruenti modulo 12 perché 12 divide $45 - 21$:
 \begin{equation*}
     \congruenti{45}{21}{12} \sse 12 \divisore (45 - 21)
 \end{equation*}
 
 Dal momento che le formule~\eqref{eq:def_congruenza} e~\eqref{eq:th_congruenza} sono delle equivalenze logiche, potrei usare la~\eqref{eq:th_congruenza} come definizione di congruenza, e dimostrare la~\eqref{eq:def_congruenza} come teorema.
 
-\begin{mdframed}
-    \begin{teorema}
-        \label{th:divisore_della_differenza}
-        \begin{equation}
-            m \divisore a \quad\land\quad m \divisore b \allora m \divisore (a - b)
-        \end{equation}
-    \end{teorema}
-    \begin{proof}
-        Se $m$ divide $a$, significa che il resto della divisione $a : m$ è nullo. Lo stesso possiamo dire per $b$. Quindi dividendo $a$ e $b$ per $m$ otteniamo lo stesso resto, quindi i due numeri sono congruenti modulo $m$:
-        \begin{equation}
-            m \divisore a \quad\land\quad m \divisore b \allora \congruenti{a}{b}{m}
-        \end{equation}
+\begin{teorema}
+    \label{th:divisore_della_differenza}
+    \begin{equation*}
+        m \divisore a \quad\land\quad m \divisore b \allora m \divisore (a - b)
+    \end{equation*}
 
-        Per il teorema~\ref{th:congruenza} possiamo inoltre affermare:
-        \begin{equation}
-            m \divisore a \quad\land\quad m \divisore b \allora \congruenti{a}{b}{m} \allora m \divisore (a-b)
-        \end{equation}
-    \end{proof}
-\end{mdframed}
+    \mdfsubtitle{Dimostrazione}
 
-\begin{mdframed}
-    \begin{teorema}
-        La congruenza modulo $m$ è una relazione di equivalenza.
-    \end{teorema}
-    \begin{proof}
-        Una relazione è di equivalenza se gode delle proprietà riflessiva, simmetrica e transitiva.
+    Se $m$ divide $a$, significa che il resto della divisione $a : m$ è nullo.
+    Lo stesso possiamo dire per $b$.
+    Quindi dividendo $a$ e $b$ per $m$ otteniamo lo stesso resto, quindi i due numeri sono congruenti modulo $m$:
+    \begin{equation*}
+        m \divisore a \quad\land\quad m \divisore b \allora \congruenti{a}{b}{m}
+    \end{equation*}
 
-        La congruenza gode della proprietà \emph{riflessiva} infatti per la proprietà riflessiva dell'uguaglianza:
-        \begin{equation*}
-            \congruenti{a}{a}{m} \sse a \modulo m = a \modulo m
-        \end{equation*}
-        
-        La congruenza gode della proprietà \emph{simmetrica} infatti:
-        \begin{equation*}            
-            \congruenti{a}{b}{m} \allora a \modulo m = b \modulo m 
-        \end{equation*}
-        quindi per la proprietà simmetrica dell'uguaglianza:
-        \begin{equation*}
-            \allora b \modulo m = a \modulo m \allora \congruenti{b}{a}{m}
-        \end{equation*}
-        
-        La congruenza gode della proprietà \emph{transitiva} infatti:
-        \begin{gather*}
-            \congruenti{a}{b}{m} \allora a \modulo m = b \modulo m \\
-            \congruenti{b}{c}{m} \allora b \modulo m = c \modulo m
-        \end{gather*}
-        quindi per la proprietà transitiva dell'uguaglianza:
-        \begin{equation*}
-            \allora a \modulo m = c \modulo m \allora \congruenti{a}{c}{m}
-        \end{equation*}
-    \end{proof}
-\end{mdframed}
+    Per il teorema~\ref{th:congruenza} possiamo inoltre affermare:
+    \begin{equation*}
+        m \divisore a \quad\land\quad m \divisore b \allora \congruenti{a}{b}{m} \allora m \divisore (a-b)
+    \end{equation*}
+\end{teorema}
+
+\begin{teorema}
+    La congruenza modulo $m$ è una relazione di equivalenza.
+
+    \mdfsubtitle{Dimostrazione}
+
+    Una relazione è di equivalenza se gode delle proprietà riflessiva, simmetrica e transitiva.
+
+    La congruenza gode della proprietà \emph{riflessiva} infatti per la proprietà riflessiva dell'uguaglianza:
+    \begin{equation*}
+        \congruenti{a}{a}{m} \sse a \modulo m = a \modulo m
+    \end{equation*}
+
+    La congruenza gode della proprietà \emph{simmetrica} infatti:
+    \begin{equation*}
+        \congruenti{a}{b}{m} \allora a \modulo m = b \modulo m
+    \end{equation*}
+    quindi per la proprietà simmetrica dell'uguaglianza:
+    \begin{equation*}
+        \allora b \modulo m = a \modulo m \allora \congruenti{b}{a}{m}
+    \end{equation*}
+
+    La congruenza gode della proprietà \emph{transitiva} infatti:
+    \begin{gather*}
+        \congruenti{a}{b}{m} \allora a \modulo m = b \modulo m \\
+        \congruenti{b}{c}{m} \allora b \modulo m = c \modulo m
+    \end{gather*}
+    quindi per la proprietà transitiva dell'uguaglianza:
+    \begin{equation*}
+        \allora a \modulo m = c \modulo m \allora \congruenti{a}{c}{m}
+    \end{equation*}
+\end{teorema}
 
 \section{Le classi di congruenza}
+\label{sec:classi_di_congruenza}
 
-Come mostrato nel caso dell'orologio, la congruenza modulo $m$ divide l'insieme $\Z$ dei numeri interi in $m$ sottoinsiemi. Per esempio, se consideriamo la congruenza modulo 3, abbiamo i seguenti insiemi:
+Come mostrato nel caso dell'orologio, la congruenza modulo $m$ divide l'insieme $\Z$ dei numeri interi in $m$ sottoinsiemi.
+Per esempio, se consideriamo la congruenza modulo 3, abbiamo i seguenti insiemi:
 \begin{gather*}
     \{\dots, -6, -3, 0, 3, 6, \dots\} \\
     \{\dots, -5, -2, 1, 4, 7, \dots\} \\
@@ -148,47 +145,57 @@ Come mostrato nel caso dell'orologio, la congruenza modulo $m$ divide l'insieme 
 
 Questi insiemi hanno due caratteristiche significative:
 \begin{itemize}
-    \item ogni numero intero appartiene ad uno di questi insiemi, ovvero l'unione degli insiemi forma l'insieme $\Z$;
-    \item ogni numero intero appartiene ad uno solo di questi insiemi, ovvero gli insiemi sono tra loro disgiunti.
+    \item ogni numero intero appartiene a uno di questi insiemi, ovvero l'unione degli insiemi forma l'insieme $\Z$;
+    \item ogni numero intero appartiene a uno solo di questi insiemi, ovvero gli insiemi sono tra loro disgiunti.
 \end{itemize}
 
 Quando si presentano queste due caratteristiche si dice che gli insiemi formano una \textbf{partizione} dell'insieme di partenza, quindi possiamo dire che i tre insiemi sopra presentati \emph{partizionano} l'insieme degli interi $\Z$.
 
-\begin{mdframed}
-    \begin{definizione}
-        Gli insiemi che formano una partizione degli interi in base ad una congruenza modulo $m$ si chiamano \textbf{classi di congruenza}.
-    \end{definizione}
-\end{mdframed}
+\begin{definizione}[Classi di congruenza]
+    Gli insiemi che formano una partizione degli interi in base a una congruenza modulo $m$ si chiamano \textbf{classi di congruenza}.
+\end{definizione}
 
 Per indicare la classe di congruenza a cui appartiene un interno $a$, relativamente al modulo $m$, si utilizza la seguente notazione:
-
 \begin{equation*}
     [a]_m
 \end{equation*}
 
 Talvolta, quando si lavora con un unico modulo o quando è chiaro quale modulo si sta usando, si può omettere il pedice $m$.
 
-Tale insieme conterrà tutti i numeri interi che sono congruenti modulo $m$ dell'elemento $a$ scelto, per cui possiamo scrivere:
+L'insieme $[a]_m$ contiene tutti i numeri interi che sono congruenti modulo $m$ dell'elemento $a$ scelto, per cui possiamo scrivere:
 \begin{equation*}
     [a]_m = \{z \in \Z \mid \congruenti{z}{a}{m}\}
 \end{equation*}
 
-Tra tutti gli elementi di una classe di congruenza consideriamo rappresentante privilegiato quello positivo e minore di $m$. Per cui i rappresentanti delle classi di congruenza a modulo 3 sono:
-
+Tra tutti gli elementi di una classe di congruenza consideriamo rappresentante privilegiato quello positivo e minore di $m$.
+Per cui i rappresentanti delle classi di congruenza a modulo 3 sono:
 \begin{equation*}
     [0]_3, [1]_3, [2]_3
 \end{equation*}
 
 Quando vorremo riferirci alle classi di congruenza useremo normalmente questi rappresentanti privilegiati.
 
-E' immediato notare che i rappresentanti privilegiati coincidono con i resti della divisione per $m$ di tutti gli elementi di ciascuna classe di congruenza. Per cui vale anche questa definizione:
+È immediato notare che i rappresentanti privilegiati coincidono con i resti della divisione per $m$ di tutti gli elementi di ciascuna classe di congruenza.
+Per cui vale anche questa definizione:
 \begin{equation*}
     [a]_m = \{z \in \Z \mid z \modulo m = a\} \quad \text{con } 0 \le a < m
 \end{equation*}
 
+Quindi possiamo dedurre le seguenti equivalenze:
+\begin{gather*}
+    [z]_m = [a]_m \sse z \modulo m = a \quad \text{con } 0 \le a < m \\
+    [z]_m = [0]_m \sse z \modulo m = 0 \sse m \divisore z
+\end{gather*}
+
+Infine è immediato osservare che:
+\begin{gather*}
+    [m]_m = [0]_m \\
+    [am]_m = [0]_m
+\end{gather*}
+
 Le classi di congruenza formano un nuovo insieme che indicheremo con $\Z_m$:
 \begin{equation*}
-    \Z_m = \{ [a]_m \mid 0 \le a < m \}
+    \Z_m= \{ [a]_m \mid 0 \le a < m \}
 \end{equation*}
 
 Per esempio:
@@ -199,6 +206,7 @@ Per esempio:
 \end{gather*}
 
 \section{Operazioni tra classi di congruenza}
+\label{sec:operazioni_tra_classi_di_congruenza}
 
 Quello che vogliamo scoprire, ora, è se è possibile inventare una nuova aritmetica che lavori con la classi di congruenza.\footnote{Non dovrebbe stupirti questo programma di costruire una nuova aritmetica basata sulle classi di congruenza. Dopotutto anche le frazioni sono della classi di congruenza, ricordi? In particolare:
 \begin{equation*}
@@ -212,101 +220,126 @@ Per esempio:
 \end{equation*}
 }
 
-\begin{mdframed}
-    \begin{teorema}
-        Se
-        \begin{equation*}
-            \congruenti{a_1}{a_2}{m} \quad\land\quad \congruenti{b_1}{b_2}{m}
-        \end{equation*}
-        allora:
-        \begin{gather*}
-            \congruenti{a_1 + b_1}{a_2 + b_2}{m} \\
-            \congruenti{a_1 \cdot b_1}{a_2 \cdot b_2}{m} \\
-            \congruenti{a_1 - b_1}{a_2 - b_2}{m} 
-        \end{gather*}
-    \end{teorema}
-    \begin{proof}[Dimostrazione della somma]
-        Se $a_1$ e $a_2$ sono congruenti, allora le divisioni hanno lo stesso resto, che chiamo $r_a$;
-        similmente chiamo $r_b$ il resto delle divisioni di $b_1$ e $b_2$
-        \begin{gather*}
-            a_1 = q_{a_1} m + r_a \\
-            a_2 = q_{a_2} m + r_a \\
-            b_1 = q_{b_1} m + r_b \\
-            b_2 = q_{b_2} m + r_b 
-        \end{gather*}
-        Calcoliamo ora le somme che ci interessano:
-        \begin{gather*}
-            a_1 + b_1 = q_{a_1} m + r_a + q_{b_1} m + r_b = (q_{a_1} + q_{b_1}) m + (r_a + r_b) \\
-            a_2 + b_2 = q_{a_2} m + r_a + q_{b_2} m + r_b = (q_{a_2} + q_{b_2}) m + (r_a + r_b) 
-        \end{gather*}
-        Risulta quindi che le divisioni di $a_1 + b_1$ e di $a_2 + b_2$ per $m$ hanno entrambi il resto uguale a $r_a + r_b$. Quindi le due somme sono congruenti.
-    \end{proof}
-\end{mdframed}
+\begin{teorema}
+    Se
+    \begin{equation*}
+        \congruenti{a_1}{a_2}{m} \quad\land\quad \congruenti{b_1}{b_2}{m}
+    \end{equation*}
+    allora:
+    \begin{gather*}
+        \congruenti{a_1 + b_1}{a_2 + b_2}{m} \\
+        \congruenti{a_1 \cdot b_1}{a_2 \cdot b_2}{m} \\
+        \congruenti{a_1 - b_1}{a_2 - b_2}{m}
+    \end{gather*}
 
-Questo teorema ha una conseguenza importantissima. Prendiamo due classi di congruenza: $[a]_m$ e $[b]_m$. Qualunque sia l'elemento che prendo della prima classe e qualunque sia l'elemento che prendo dalla seconda classe, la loro somma apparterrà sempre alla medesima classe.
+    \mdfsubtitle{Dimostrazione della somma}
 
-Per esempio, qualsiasi elemento prenda da $[1]_4$ e qualsiasi elemento prenda da $[2]_4$, la loro somma apparterrà sempre alla classe $[3]_4$. 
+    Se $a_1$ e $a_2$ sono congruenti, allora le divisioni hanno lo stesso resto, che chiamo $r_a$;
+    similmente chiamo $r_b$ il resto delle divisioni di $b_1$ e $b_2$
+    \begin{gather*}
+        a_1 = q_{a_1} m + r_a \\
+        a_2 = q_{a_2} m + r_a \\
+        b_1 = q_{b_1} m + r_b \\
+        b_2 = q_{b_2} m + r_b
+    \end{gather*}
 
-Questo mi permette di introdurre una nuova operazione.
+    Calcoliamo ora le somme che ci interessano:
+    \begin{gather*}
+        a_1 + b_1 = q_{a_1} m + r_a + q_{b_1} m + r_b = (q_{a_1} + q_{b_1}) m + (r_a + r_b) \\
+        a_2 + b_2 = q_{a_2} m + r_a + q_{b_2} m + r_b = (q_{a_2} + q_{b_2}) m + (r_a + r_b)
+    \end{gather*}
+    Risulta quindi che le divisioni di $a_1 + b_1$ e di $a_2 + b_2$ per $m$ hanno entrambi il resto uguale a $r_a + r_b$.
+    Quindi le due somme sono congruenti.
+\end{teorema}
 
-\begin{mdframed}
-    \begin{definizione}
-        Definisco la somma tra due classi di equivalenza come la classe di equivalenza che contiene la somma di due loro rappresentanti:
+Questo teorema ha una conseguenza importantissima.
+Prendiamo due classi di congruenza: $[a]_m$ e $[b]_m$.
+Qualunque sia l'elemento che prendo della prima classe e qualunque sia l'elemento che prendo dalla seconda classe, la loro somma apparterrà sempre alla medesima classe.
 
-        \begin{equation}
-            \label{eq:somma} [a]_m + [b]_m = [a + b]_m
-        \end{equation}
-    \end{definizione}
-\end{mdframed}
+Per esempio, qualsiasi elemento prenda da $[1]_4$ e qualsiasi elemento prenda da $[2]_4$, la loro somma apparterrà sempre alla classe $[3]_4$.
+
+Questo mi permette d'introdurre una nuova operazione.
+
+\begin{definizione}[Somma tra classi]
+    Definisco la somma tra due classi di equivalenza come la classe di equivalenza che contiene la somma di due loro rappresentanti:
+    \begin{equation}
+        \label{eq:somma} [a]_m + [b]_m = [a + b]_m
+    \end{equation}
+\end{definizione}
 
 Similmente:
 
-\begin{mdframed}
-    \begin{definizione}
-        Definisco il prodotto tra due classi di equivalenza come la classe di equivalenza che contiene il prodotto di due loro rappresentanti:
+\begin{definizione}[Prodotto tra classi]
+    Definisco il prodotto tra due classi di equivalenza come la classe di equivalenza che contiene il prodotto di due loro rappresentanti:
+    \begin{equation}
+        \label{eq:prodotto} [a]_m \cdot [b]_m = [a \cdot b]_m
+    \end{equation}
+\end{definizione}
 
-        \begin{equation}
-            \label{eq:prodotto} [a]_m \cdot [b]_m = [a \cdot b]_m
-        \end{equation}
-    \end{definizione}
-\end{mdframed}
-
-\begin{mdframed}
-    \begin{definizione}
-        Definisco la differenza tra due classi di equivalenza come la classe di equivalenza che contiene la differenza di due loro rappresentanti:
-
-        \begin{equation}
-            \label{eq:differenza} [a]_m - [b]_m = [a - b]_m
-        \end{equation}
-    \end{definizione}
-\end{mdframed}
+\begin{definizione}[Differenza tra classi]
+    Definisco la differenza tra due classi di equivalenza come la classe di equivalenza che contiene la differenza di due loro rappresentanti:
+    \begin{equation}
+        \label{eq:differenza} [a]_m - [b]_m = [a - b]_m
+    \end{equation}
+\end{definizione}
 
 Queste nuove operazioni mi permettono di semplificare i calcoli quando voglio calcolare i resti delle divisioni.
 
-\begin{mdframed}
-    \begin{esercizio}
-        Calcola il seguente resto:
+\begin{esercizio}
+    Calcola il seguente resto:
+    \begin{equation*}
+        (73 \cdot 26 + 94) \modulo 7
+    \end{equation*}
 
-        \begin{equation*}
-            (73 \cdot 26 + 94) \modulo 7
-        \end{equation*}
-    \end{esercizio}    
-    \begin{proof}[Soluzione]
-        Calcolare il resto richiesto corrisponde a determinare qual è la classe di congruenza del risultato dell'operazione al dividendo:
-        \begin{align*}
-            [73 \cdot 26 + 94]_7 &= [73 \cdot 26]_7 + [94]_7 &&\text{per la~\eqref{eq:somma}} \\
-            &= [73]_7 \cdot [26]_7 + [94]_7 &&\text{per la~\eqref{eq:prodotto}} \\
-            &= [3]_7 \cdot [5]_7 + [3]_7 &&\text{per congruenza modulo 7} \\
-            &= [3 \cdot 5]_7 + [3]_7 &&\text{per la~\eqref{eq:prodotto}} \\
-            &= [15]_7 + [3]_7 \\
-            &= [15 + 3]_7 &&\text{per la~\eqref{eq:somma}} \\
-            &= [18]_7 \\
-            &= [4]_7 &&\text{per congruenza modulo 7}
-        \end{align*}
+    \mdfsubtitle{Soluzione}
+    Calcolare il resto richiesto corrisponde a determinare qual è la classe di congruenza del risultato dell'operazione al dividendo:
+    \begin{align*}
+        [73 \cdot 26 + 94]_7 &= [73 \cdot 26]_7 + [94]_7 &&\text{per la~\eqref{eq:somma}} \\
+        &= [73]_7 \cdot [26]_7 + [94]_7 &&\text{per la~\eqref{eq:prodotto}} \\
+        &= [3]_7 \cdot [5]_7 + [3]_7 &&\text{per congruenza modulo 7} \\
+        &= [3 \cdot 5]_7 + [3]_7 &&\text{per la~\eqref{eq:prodotto}} \\
+        &= [15]_7 + [3]_7 \\
+        &= [15 + 3]_7 &&\text{per la~\eqref{eq:somma}} \\
+        &= [18]_7 \\
+        &= [4]_7 &&\text{per congruenza modulo 7}
+    \end{align*}
 
-        Quindi:
-        \begin{equation*}
-            (73 \cdot 26 + 94) \modulo 7 = 4
-        \end{equation*}
-    \end{proof}
-\end{mdframed}
+    Quindi:
+    \begin{equation*}
+        (73 \cdot 26 + 94) \modulo 7 = 4
+    \end{equation*}
+\end{esercizio}
+
+\section{Proprietà delle operazioni tra classi}
+\label{sec:proprieta_operazioni_classi}
+
+\begin{teorema}[Proprietà della somma]
+    \begin{itemize}
+        \item proprietà commutativa \\ $[a]_m + [b]_m = [b]_m + [a]_m$
+        \item proprietà associativa \\ $([a]_m + [b]_m) + [c]_m = [a]_m + ([b]_m + [c]_m)$
+        \item $[0]_m$ è l'elemento neutro della somma \\ $[0]_m + [a]_m = [a]_m + [0]_m = [0]_m$
+        \item ogni $[a]_m$ ha un \textbf{opposto}: $[m-a]_m$ \\ $[a]_m + [m-a]_m = [m-a]_m + [a]_m = [0]_m$
+    \end{itemize}
+\end{teorema}
+
+\begin{teorema}[Proprietà del prodotto]
+    \begin{itemize}
+        \item proprietà commutativa \\ $[a]_m \cdot [b]_m = [b]_m \cdot [a]_m$
+        \item proprietà associativa \\ $([a]_m \cdot [b]_m) \cdot [c]_m = [a]_m \cdot ([b]_m \cdot [c]_m)$
+        \item $[1]_m$ è l'elemento neutro del prodotto \\ $[0]_m \cdot [a]_m = [a]_m \cdot [0]_m = [0]_m$
+    \end{itemize}
+\end{teorema}
+
+Sebbene il prodotto si \emph{comporti bene} in $\Z_m$, perdiamo alcune proprietà che invece
+abbiamo nell'aritmetica in $\Z$.
+
+Un esempio è la \textbf{legge dell'annullamento del prodotto}: in $\Z$ se il prodotto di due numeri è uguale a zero,
+almeno uno dei due numeri è nullo:
+\begin{equation*}
+    ab = 0 \sse a = 0 \lor b = 0
+\end{equation*}
+
+In $\Z_m$ questo non è generalmente vero, per esempio:
+\begin{equation*}
+    [2]_{10} \cdot [5]_{10} = [10]_{10} = [0]_{10}
+\end{equation*}

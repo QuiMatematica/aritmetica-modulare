@@ -1,12 +1,16 @@
 \chapter{Divisione con resto}
+\label{ch:divisione_con_resto}
 
 \section{Divisione euclidea}
+\label{sec:divisione_euclidea}
 
-Fin dalla scuola primaria conosciamo la divisione con resto. Vogliamo ora vederne la proprietà fondamentale e precisarne la definizione. Inoltre vogliamo estendere la divisione a tutto l'insieme degli interi $\Z$.
+Fin dalla scuola primaria conosciamo la divisione con resto.
+Vogliamo ora vederne la proprietà fondamentale e precisarne la definizione.
+Inoltre vogliamo estendere la divisione a tutto l'insieme degli interi $\Z$.
 
-\begin{mdframed}
 \begin{teorema}
-Siano $a, b \in \Z$, con $b \ne 0$. Allora esistono due numeri interi $q$ e $r$ tali che:
+Siano $a, b \in \Z$, con $b \ne 0$.
+Allora esistono due numeri interi $q$ e $r$ tali che:
 
 \begin{gather}
     a = qb + r \\
@@ -15,16 +19,15 @@ Siano $a, b \in \Z$, con $b \ne 0$. Allora esistono due numeri interi $q$ e $r$ 
 
 Inoltre $q$ ed $r$ sono unici.
 \end{teorema}
-\end{mdframed}
 
-\begin{mdframed}
-\begin{definizione}
+\begin{definizione}[Divisione euclidea]
 L'operazione sopra presentata si chiama \textbf{divisione euclidea}, o \textbf{divisione con resto}. $a$
-si chiama dividendo, $b$ si chiama divisore, $q$ si chiama quoziente e $r$ si chiama resto.
+si chiama \textbf{dividendo}, $b$ si chiama \text{divisore}, $q$ si chiama \textbf{quoziente} e $r$ si chiama \textbf{resto}.
 \end{definizione}
-\end{mdframed}
 
-Se, con numeri positivi, questa divisione coincide con quella che abbiamo imparato alla scuola primaria, ora abbiamo la novità dell'uso dei numeri negativi. E l'elemento a cui dobbiamo assolutamente fare attenzione è che il resto \emph{deve sempre essere positivo}. Analizziamo i singoli casi:
+Se, con numeri positivi, questa divisione coincide con quella che abbiamo imparato alla scuola primaria, ora abbiamo la novità dell'uso dei numeri negativi.
+E l'elemento a cui dobbiamo assolutamente fare attenzione è che il resto \emph{deve sempre essere positivo}.
+Analizziamo i singoli casi:
 
 \begin{itemize}
     \item $a < 0 \,\,\land\,\, b > 0$: \\
@@ -58,41 +61,36 @@ Se, con numeri positivi, questa divisione coincide con quella che abbiamo impara
 \end{itemize}
 
 \section{L'operazione "modulo"}
+\label{sec:modulo}
 
-In molte situazioni ci interessa solo il resto di una divisione, per cui introduciamo l'operazione di "modulo":
+In molte situazioni ci interessa solo il resto di una divisione, per cui introduciamo l'operazione di \emph{modulo}:
 
-\begin{mdframed}
-\begin{definizione}
+\begin{definizione}[Modulo]
     L'operazione \textbf{modulo} $\bmod$ restituisce il solo resto di una divisione euclidea:
-
-    \begin{equation}
+    \begin{equation*}
         a \bmod b = r \sse \exists q : a = qb + r \text{ con } 0 \le r < \valoreassoluto{b}
-    \end{equation}
+    \end{equation*}
 \end{definizione}
-\end{mdframed}
 
 Esempi:
-
 \begin{align*}
     14 \bmod 6 = 2 &\quad\quad\text{perché } 14 = 2\cdot 6 + 2 \\
     -14 \bmod 6 = 4 &\quad\quad\text{perché } -14 = -3 \cdot 6 + 4
 \end{align*}
 
-\section{La relazione "divide"}
+\section{La relazione divide}
+\label{sec:divide}
 
-\begin{mdframed}
-\begin{definizione}
+\begin{definizione}[Divide]
     Nel caso in cui
-
     \begin{equation*}
         a \modulo b = 0
     \end{equation*}
     
     si dice che il $b$ \textbf{divide} $a$ e si scrive:
-
-    \begin{equation}
+    \begin{equation*}
         b \divisore a
-    \end{equation}
+    \end{equation*}
 
     Quindi:
     \begin{equation*}
@@ -100,5 +98,30 @@ Esempi:
     \end{equation*}
     
 \end{definizione}
-\end{mdframed}
-   
+
+\begin{teorema}
+    \begin{equation*}
+        b \divisore a \sse bp \divisore ap
+    \end{equation*}
+
+    \mdfsubtitle{Dimostrazione}
+
+    Basta far riferimento alla seconda legge di monotonia:
+    \begin{equation*}
+        b \divisore a \sse \exists q : a = qb \sse \exists q : ap = qbp \sse bp \divisore ap
+    \end{equation*}
+\end{teorema}
+
+\section{Esercizi}
+\label{sec:esercizi_divisione}
+
+\textbf{Esercizio 1}
+Per ognuna delle seguenti affermazioni dire se è vera o falsa;
+$p$ denota un numero primo, $a$ e $b$ generici numeri interi.
+\begin{gather*}
+    p \divisore ab \allora p \divisore a \lor p \divisore b \\
+    p^2 \divisore ab \allora p^2 \divisore a \lor p^2 \divisore b \\
+    p \divisore a-b \allora p \divisore a+b \\
+    p^2 \divisore a^3 \allora p^6 \divisore a^6 \\
+    p^2 \divisore b^3 \allora p^2 \divisore b
+\end{gather*}
