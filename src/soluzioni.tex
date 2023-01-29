@@ -102,6 +102,60 @@
 \end{soluzione}
 
 \begin{soluzione}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2017_13}}
+    Dobbiamo determinare le cifre $a$ e $b$ tali che:
+    \begin{equation*}
+        a1211b \modulo 88 = 0
+    \end{equation*}
+
+    Un numero è divisibile per 88 se è divisibile per 8 e per 11.
+    Quindi il problema è equivalente a determinare le cifre tali che:
+    \begin{equation*}
+        \begin{cases}
+            a1211b \modulo 8 = 0 \\
+            a1211b \modulo 11 = 0
+        \end{cases}
+    \end{equation*}
+
+    Passiamo alle classi di congruenza e, sfruttando i criteri di congruenza, abbiamo:
+    \begin{gather*}
+        [a1211b]_8 = [0]_8 \\
+        [11b]_8 = [0]_8 \\
+        [100]_8 + [10]_8 + [b]_8 = [0]_8 \\
+        [4]_8 + [2]_8 + [b]_8 = [0]_8 \\
+        [6]_8 + [b]_8 = [0]_8 \\
+        [b]_8 = -[6]_8 \\
+        [b]_8 = [2]_8
+    \end{gather*}
+
+    L'unica cifra singola che appartiene alla classe di congruenza $[2]_8$ è il 2, quindi $b = 2$.
+
+    Verifichiamo ora che il numero $a12112$ sia divisibile per 11.
+
+    Balza all'occhio che il numero $112112$ è divisibile per 11, e visto che il problema sembra prevedere un'unica
+    soluzione, potremo dare questa risposta.
+    Ma assicuriamoci che non esistano altre soluzioni.
+    Passiamo alle classi di congruenza modulo 11 e, nuovamente sfruttando i criteri di congruenza, abbiamo:
+    \begin{gather*}
+        [a12112]_{11} = [0]_{11} \\
+        [-a + 1 - 2 + 1 - 1 + 2]_{11} = [0]_{11} \\
+        [-a + 1]_{11} = [0]_{11} \\
+        -[a]_{11} + [1]_{11} = [0]_{11} \\
+        [a]_{11} = [1]_{11}
+    \end{gather*}
+
+    L'unica cifra singola che appartiene alla classe di congruenza $[1]_{11}$ è l'1, quindi $a = 1$.
+
+    Non ci resta che fare la divisione:
+    \begin{equation*}
+        112112 : 88 = 1274
+    \end{equation*}
+
+    \mdfsubtitle{Risposta}
+    Un singolo vaso costa 1274 dracme.
+\end{soluzione}
+
+\begin{soluzione}
     \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018_1}}
     Chiamiamo $n$ il numero di risposte corrette date da Camilla.
     Quindi ha sbagliato $90 - n$ risposte.
@@ -117,9 +171,6 @@
 
     Quindi il punteggio di Camilla deve essere divisibile per 6.
     L'unico punteggio tra quelli proposti non divisibile per 6 è il 116.
-
-
-
 \end{soluzione}
 
 \begin{soluzione}
