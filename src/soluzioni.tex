@@ -3,6 +3,159 @@
 
 
 \begin{soluzione}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:stage_senior_41}}
+
+    Affinché $\dfrac{n + 3}{n + 1}$ sia intero è necessario che $n+1$ divida $n+3$:
+    \begin{gather*}
+        [n + 3]_{n + 1} = [0]_{n+1} \\
+        [n + 1 + 2]_{n + 1} = [0]_{n+1} \\
+        [n + 1]_{n+1} + [2]_{n + 1} = [0]_{n+1} \\
+        [2]_{n + 1} = [0]_{n+1} \\
+    \end{gather*}
+
+    Quindi $n+1$ deve dividere 2.
+    I divisori (positivi e negativi) di 2 sono $-2$, $-1$, 1 e 2:
+    \begin{align*}
+        n + 1 = -2 &\allora n = -3 \\
+        n + 1 = -1 &\allora n = -2 \\
+        n + 1 = 1 &\allora n = 0 \\
+        n + 1 = 2 &\allora n = 1
+    \end{align*}
+
+    Affinché $\dfrac{3n + 10}{n + 2}$ sia intero è necessario che $n+2$ divida $3n+10$:
+    \begin{gather*}
+        [3n+10]_{n+2} = [0]_{n+2} \\
+        [3n + 6 + 4]_{n+2} = [0]_{n+2} \\
+        [3n + 6]_{n+2} + [4]_{n+2} = [0]_{n+2} \\
+        [4]_{n+2} = [0]_{n+2}
+    \end{gather*}
+
+    Quindi $n+2$ deve dividere 4.
+    I divisori (positivi e negativi) di 4 sono $-4$, $-2$, $-1$, 1, 2 e 4:
+    \begin{align*}
+        n+2 = -4 &\allora n = -6 \\
+        n+2 = -2 &\allora n = -4 \\
+        n+2 = -1 &\allora n = -3 \\
+        n+2 = 1 &\allora n = -1 \\
+        n+2 = 2 &\allora n = 0 \\
+        n+2 = 4 &\allora n = 2
+    \end{align*}
+
+    Affinché $\dfrac{n + 7}{2n + 1}$ sia intero è necessario che $2n+1$ divida $n+7$.
+    Però in questo caso non riusciamo ad isolare a numeratore un multiplo del denominatore, a causa di quel fattore 2
+    che moltiplica $n$ a denominatore.
+
+    Osserviamo che il denominatore è un numero dispari quindi se moltiplichiamo il numeratore per 2 non rischiamo
+    di aggiungere fattori che sono presenti nel denominatore.
+    Quindi $2n+1$ divide $n+7$ se e solo se $2n+1$ divide $2(n+7)$:
+    \begin{gather*}
+        [2n +14]_{2n+1} = [0]_{2n + 1} \\
+        [13]_{2n + 1} = [0]_{2n + 1}
+    \end{gather*}
+
+    I divisori di 13 sono $-13$, $-1$, 1 e 13:
+    \begin{align*}
+        2n + 1 = -13 &\allora n = -7 \\
+        2n + 1 = -1 &\allora n = -1 \\
+        2n + 1 = 1 &\allora n = 0 \\
+        2n + 1 = 13 &\allora n = 6
+    \end{align*}
+
+    Affinché $\dfrac{3a + 1}{2a + 3}$ sia intero è necessario che $2a+3$ divida $3a+1$.
+    Il denominatore è dispari, quindi posso moltiplicare il numeratore per 2:
+    \begin{gather*}
+        [6a + 2]_{2a + 3} = [0]_{2a + 3} \\
+        [6a + 9 - 7]_{2a + 3} = [0]_{2a+3} \\
+        [-7]_{2a + 3} = [0]_{2a+3}
+    \end{gather*}
+
+    Quindi $2a + 3$ deve dividere 7:
+    \begin{align*}
+        2a + 3 = -7 &\allora a = -5 \\
+        2a + 3 = -1 &\allora a = -2 \\
+        2a + 3 = 1 &\allora a = -1 \\
+        2a + 3 = 7 &\allora a = 2
+    \end{align*}
+
+    Per l'ultimo caso dobbiamo ricorrere a qualche altro stratagemma, perché il denominatore scritto in quel modo
+    non mi permette di operare semplificazioni sul numeratore.
+
+    Possiamo allora tentare di restringere l'analisi tenendo conto del fatto che il divisore deve essere (in valore
+    assoluto) minore o uguale al denominatore (in valore assoluto).
+    Nella frazione considerata, inoltre, abbiamo il vantaggio che il denominatore è sicuramente positivo, quindi
+    possiamo semplificare la condizione in:
+    \begin{gather*}
+        2n^2 + 1 \le 15 - 3n \\
+        2n^2 + 3n - 14 \le 0 \\
+        -\dfrac{7}{2} \le n \le 2
+    \end{gather*}
+
+    Quindi gli unici casi da analizzare sono i seguenti:
+    \begin{align*}
+        n = -3 &\allora \dfrac{15 - 3n}{2n^2 + 1} = \dfrac{24}{19} &\text{non accettabile} \\
+        n = -2 &\allora \dfrac{15 - 3n}{2n^2 + 1} = \dfrac{21}{9} &\text{non accettabile} \\
+        n = -1 &\allora \dfrac{15 - 3n}{2n^2 + 1} = \dfrac{18}{3} &\text{accettabile} \\
+        n = 0 &\allora \dfrac{15 - 3n}{2n^2 + 1} = \dfrac{15}{1} &\text{accettabile} \\
+        n = 1 &\allora \dfrac{15 - 3n}{2n^2 + 1} = \dfrac{12}{3} &\text{accettabile} \\
+        n = 2 &\allora \dfrac{15 - 3n}{2n^2 + 1} = \dfrac{9}{9} &\text{accettabile}
+    \end{align*}
+\end{soluzione}
+
+\begin{soluzione}
+    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2017_13}}
+    Dobbiamo determinare le cifre $a$ e $b$ tali che:
+    \begin{equation*}
+        a1211b \modulo 88 = 0
+    \end{equation*}
+
+    Un numero è divisibile per 88 se è divisibile per 8 e per 11.
+    Quindi il problema è equivalente a determinare le cifre tali che:
+    \begin{equation*}
+        \begin{cases}
+            a1211b \modulo 8 = 0 \\
+            a1211b \modulo 11 = 0
+        \end{cases}
+    \end{equation*}
+
+    Passiamo alle classi di congruenza e, sfruttando i criteri di congruenza, abbiamo:
+    \begin{gather*}
+        [a1211b]_8 = [0]_8 \\
+        [11b]_8 = [0]_8 \\
+        [100]_8 + [10]_8 + [b]_8 = [0]_8 \\
+        [4]_8 + [2]_8 + [b]_8 = [0]_8 \\
+        [6]_8 + [b]_8 = [0]_8 \\
+        [b]_8 = -[6]_8 \\
+        [b]_8 = [2]_8
+    \end{gather*}
+
+    L'unica cifra singola che appartiene alla classe di congruenza $[2]_8$ è il 2, quindi $b = 2$.
+
+    Verifichiamo ora che il numero $a12112$ sia divisibile per 11.
+
+    Balza all'occhio che il numero $112112$ è divisibile per 11, e visto che il problema sembra prevedere un'unica
+    soluzione, potremo dare questa risposta.
+    Ma assicuriamoci che non esistano altre soluzioni.
+    Passiamo alle classi di congruenza modulo 11 e, nuovamente sfruttando i criteri di congruenza, abbiamo:
+    \begin{gather*}
+        [a12112]_{11} = [0]_{11} \\
+        [-a + 1 - 2 + 1 - 1 + 2]_{11} = [0]_{11} \\
+        [-a + 1]_{11} = [0]_{11} \\
+        -[a]_{11} + [1]_{11} = [0]_{11} \\
+        [a]_{11} = [1]_{11}
+    \end{gather*}
+
+    L'unica cifra singola che appartiene alla classe di congruenza $[1]_{11}$ è l'1, quindi $a = 1$.
+
+    Non ci resta che fare la divisione:
+    \begin{equation*}
+        112112 : 88 = 1274
+    \end{equation*}
+
+    \mdfsubtitle{Risposta}
+    Un singolo vaso costa 1274 dracme.
+\end{soluzione}
+
+\begin{soluzione}
     \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018_1}}
     Chiamiamo $n$ il numero di risposte corrette date da Camilla.
     Quindi ha sbagliato $90 - n$ risposte.
@@ -18,9 +171,6 @@
 
     Quindi il punteggio di Camilla deve essere divisibile per 6.
     L'unico punteggio tra quelli proposti non divisibile per 6 è il 116.
-
-
-
 \end{soluzione}
 
 \begin{soluzione}

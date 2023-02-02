@@ -310,6 +310,63 @@ Queste nuove operazioni mi permettono di semplificare i calcoli quando voglio ca
     \end{equation*}
 \end{esercizio}
 
+\begin{esercizio}
+    Determinare per quali valori interi di $n$ la seguenti espressione è intera.
+    \[
+        \dfrac{n+5}{n+2}
+    \]
+
+    \mdfsubtitle{Soluzione utilizzando le classi di congruenza}
+
+    Affinché l'espressione data sia intera è necessario che $n+2$ divida $n+5$.
+    Pertanto, utilizzando le classi di congruenza modulo $n+2$ deve risultare:
+    \[
+        [n+5]_{n+2} = [0]_{n+2}
+    \]
+
+    Posso semplificare questa espressione scrivendo:
+    \begin{gather*}
+        [n+2+3]_{n+2} = [0]_{n+2} \\
+        [n+2]_{n+2}+[3]_{n+2} = [0]_{n+2} \\
+        [0]_{n+2}+[3]_{n+2} = [0]_{n+2} \\
+        [3]_{n+2} = [0]_{n+2}
+    \end{gather*}
+
+    Quindi dobbiamo verificare quando $n+2$ divide 3.
+    Il numero 3 ha solo due divisori positivi: l'1 e il 3.
+    Ma devo considerare anche i divisori negativi.
+    Quindi dobbiamo considerare quattro casi:
+    \begin{align*}
+        n+2 = 3 &\allora n = 1 \\
+        n+2 = 1 &\allora n = -1 \\
+        n+2 = -1 &\allora n = -3 \\
+        n+2 = -3 &\allora n = -5
+    \end{align*}
+
+    \mdfsubtitle{Soluzione utilizzando le frazioni}
+
+    Scomponiamo la frazione nel seguente modo:
+    \begin{equation*}
+        \dfrac{n+5}{n+2} = \dfrac{n+2 + 3}{n+2} = \dfrac{n+2}{n+2} + \dfrac{3}{n+2} = 1 + \dfrac{3}{n+2}
+    \end{equation*}
+
+    Quindi l'espressione è un intero se $n+2$ divide 3.
+
+    Poi si procede come per la soluzione precedente.
+
+    \mdfsubtitle{Risposta}
+
+    I valori di $n$ cercati sono $-5$, $-3$, $-1$ e $1$.
+    Questi corrispondono ai seguenti valori dell'espressione.
+    \begin{align*}
+        n = -5 &\allora \dfrac{n+5}{n+2} = \dfrac{-5+5}{-5+2} = \dfrac{0}{-3} = 0 \\
+        n = -3 &\allora \dfrac{n+5}{n+2} = \dfrac{-3+5}{-3+2} = \dfrac{2}{-1} = -2 \\
+        n = -1 &\allora \dfrac{n+5}{n+2} = \dfrac{-1+5}{-1+2} = \dfrac{4}{1} = 4 \\
+        n = 1 &\allora \dfrac{n+5}{n+2} = \dfrac{1+5}{1+2} = \dfrac{6}{3} = 2 \\
+    \end{align*}
+
+\end{esercizio}
+
 \section{Proprietà delle operazioni tra classi}
 \label{sec:proprieta_operazioni_classi}
 
@@ -343,3 +400,4 @@ In $\Z_m$ questo non è generalmente vero, per esempio:
 \begin{equation*}
     [2]_{10} \cdot [5]_{10} = [10]_{10} = [0]_{10}
 \end{equation*}
+
