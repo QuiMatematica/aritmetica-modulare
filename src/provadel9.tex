@@ -1,0 +1,148 @@
+\chapter{La prova del 9}
+\label{ch:prova_del_9}
+
+Anche la prova del 9 deriva dall'aritmetica modulare, in particolare dalle classi di congruenza modulo 9.
+
+\section{Come funziona}
+\label{sec:prova_del_9_come}
+
+La prova del 9 permette di verificare (con un certo grado di certezza) se una moltiplicazione è corretta.
+
+Prendiamo, per esempio, questa moltiplicazione:
+\begin{equation*}
+    745 \cdot 491 = 356795
+\end{equation*}
+
+Vogliamo verificare se è corretta.
+
+Disegniamo una croce.
+\begin{center}
+	\tikz {
+		\draw (-0.5,0.5) edge (1.5,0.5);
+        \draw (0.5,-0.5) edge (0.5,1.5);
+	}
+\end{center}
+
+Consideriamo ora il primo fattore.
+Se è maggiore di 10 dobbiamo sommarne le cifre.
+Se otteniamo un numero maggiore di 10 sommiamo di nuovo le cifre, e continuiamo in questo modo fino a ottenere un numero
+minore di 10 (composto quindi da un'unica cifra).
+Quindi:
+\begin{equation*}
+	745 \allora 7+4+5=16 \allora 1+6=7
+\end{equation*}
+
+Scriviamo il numero ottenuto nel quadrante in alto a sinistra.
+\begin{center}
+	\tikz {
+		\node at (0,1) {7};
+		\draw (-0.5,0.5) edge (1.5,0.5);
+        \draw (0.5,-0.5) edge (0.5,1.5);
+	}
+\end{center}
+
+Nel fare le somme descritte sopra si può utilizzare una scorciatoia: se è presente la cifra 9, o se sono presenti due o
+più cifre che sommate fanno 9, si possono ignorare.
+
+Per esempio in 745 ci sono le cifre 4 e 5 che sommate fanno 9.
+Quindi possiamo ignorare queste due cifre e rimane il solo numero 7.
+Che è proprio il numero che otteniamo dalla somma ripetuta delle tre cifre iniziali.
+
+Ora facciamo la stessa cosa con il secondo fattore e scriviamo il risultato nel quadrante in alto a destra.
+Ignoriamo la cifra 9 (per la scorciatoia).
+Rimangono le cifre 4 e 1 che sommate fanno 5.
+\begin{center}
+	\tikz {
+		\node at (0,1) {7};
+		\node at (1,1) {5};
+		\draw (-0.5,0.5) edge (1.5,0.5);
+        \draw (0.5,-0.5) edge (0.5,1.5);
+	}
+\end{center}
+
+Ora moltiplichiamo le due cifre scritte nei primi due quadranti e, se otteniamo un numero maggiore di 10, facciamo le
+somme delle cifre.
+
+Noi abbiamo 7 e 5:
+\begin{equation*}
+	7 \cdot 5 = 35 \allora 3 + 5 = 8
+\end{equation*}
+
+Scriviamo questo numero nel quadrante in basso a sinistra.
+\begin{center}
+	\tikz {
+		\node at (0,1) {7};
+		\node at (1,1) {5};
+		\node at (0,0) {8};
+		\draw (-0.5,0.5) edge (1.5,0.5);
+        \draw (0.5,-0.5) edge (0.5,1.5);
+	}
+\end{center}
+
+Adesso applichiamo la solita somma ripetuta al prodotto.
+Ignoriamo il 9, ignoriamo le cifre 3 e 6 (perché sommate fanno 9):
+\begin{equation*}
+	5 + 7 + 5 = 17 \allora 1 + 7 = 8
+\end{equation*}
+
+Scriviamo questo numero in basso a destra.
+\begin{center}
+	\tikz {
+		\node at (0,1) {7};
+		\node at (1,1) {5};
+		\node at (0,0) {8};
+		\node at (1,0) {8};
+		\draw (-0.5,0.5) edge (1.5,0.5);
+        \draw (0.5,-0.5) edge (0.5,1.5);
+	}
+\end{center}
+
+Ebbene.
+Se i due numeri in basso sono diversi, allora la moltiplicazione è sbagliata.
+
+Se invece sono uguali \dots beh, ci sono buone probabilità che la moltiplicazione sia corretta, ma purtroppo non c'è
+certezza.
+
+\section{Perché funziona}
+\label{sec:prova_del_9_perche}
+
+Se hai seguito questa dispensa fino a qui, questo \emph{sommare le cifre} dovrebbe suonarti familiare.
+Infatti è presente nei criteri di congruenza (e di divisibilità) per 3 e per 9.
+
+Quando mi avevano insegnato la prova del 9 alla scuola elementare (ma si insegna ancora?) mi avevano detto che si chiama
+\emph{prova del 9} per il trucchetto d'ignorare le cifre 9 o che sommate danno 9.
+Ma il vero motivo del nome è un altro.
+
+Quando andiamo a sommare le cifre stiamo facendo una congruenza modulo 9.
+In particolare stiamo portando la nostra moltiplicazione nelle classi di congruenza modulo 9 e verifichiamo se è
+corretta verificando che il prodotto è corretto anche in modulo 9.
+\begin{gather*}
+	745 \cdot 491 \overset{?}{=} 356795 \\
+	[745]_9 \cdot [491]_9 \overset{?}{=} [356795]_9 \\
+\end{gather*}
+
+Ma modulo 9 ogni numero è congruente alla somma delle proprie cifre:
+\begin{gather*}
+	[7+4+5]_9 \cdot [4+9+1]_9 \overset{?}{=} [3+5+6+7+9+5]_9 \\
+	[16]_9 \cdot [14]_9 \overset{?}{=} [35]_9 \\
+	[1+6]_9 \cdot [1+4]_9 \overset{?}{=} [3+5]_9 \\
+	[7]_9 \cdot [5]_9 \overset{?}{=} [8]_9 \\
+	[7 \cdot 5]_9 \overset{?}{=} [8]_9 \\
+	[35]_9 \overset{?}{=} [8]_9 \\
+	[3 + 5]_9 \overset{?}{=} [8]_9 \\
+	[8]_9 \overset{?}{=} [8]_9 \\
+	\text{VERO}
+\end{gather*}
+
+Tuttavia c'è un problema.
+Passando al modulo 9 noi stiamo confrontando le classi di congruenza, non i numeri.
+Quindi se sbagliamo la moltiplicazione ma otteniamo un numero che appartiene alla stessa classe di congruenza del
+risultato corretto, la prova del 9 non ci può segnalare l'errore.
+
+Infatti la moltiplicazione di cui abbiamo fatto la prova è sbagliata!
+
+Però, quello che la prova del 9 può dirci è che se vengono due classi di congruenza diverse (i numeri dei due quadranti
+in basso), allora la moltiplicazione è sicuramente sbagliata.
+
+La prova del 9 è una \emph{condizione necessaria ma non sufficiente} per la correttezza del prodotto.
+
