@@ -491,6 +491,61 @@
     \textbf{I numeri palindromi di 6 cifre divisibili per 33 sono 300.}
 \end{soluzione}
 
+\begin{soluzione}{ex:distrettuali_2023_9}
+    Innanzitutto osserviamo che il modo di costruire la successione utilizza le classi di congruenza modulo 9, dove
+    però viene scelto il numero 9 come rappresentante della classe $[0]_9$.
+
+    Infatti se abbiamo due numeri $a$ e $b$ la cui somma $a+b$ è minore di 10 (quindi è composta da una sola cifra),
+    $a+b$ può essere considerata come la somma delle classi di congruenza dei due addendi $a$ e $b$.
+    Quindi:
+    \begin{equation*}
+        a + b < 10 \allora [a]_9 + [b]_9 = [a+b]_9
+    \end{equation*}
+
+    Se invece la somma è maggiore o uguale a 10 (quindi composta di più di una cifra), il fare la somma delle cifre
+    significa utilizzare il criterio di congruenza modulo 9.
+    E quindi:
+    \begin{equation*}
+        a + b \ge 10 \allora [a]_9 + [b]_9 = [a+b]_9
+    \end{equation*}
+
+    Insomma: invece che lavorare con i numeri lavoriamo con le classi di congruenza modulo 9 (che non specificherò più).
+
+    Ora, partiamo dal fondo e, invece di scegliere i numeri di partenza $a_1$ e $a_2$, vediamo in quanti modi possiamo
+    scegliere i numeri $a_{2022}$ e $a_{2021}$.
+    E ricordiamoci che dobbiamo ottenere $a_{2023} = [9] = [0]$
+
+    Iniziamo scegliendo $a_{2022} = [0]$.
+    Quali possono essere i valori di $a_{2021}$?
+    Può essere uno solo, perché solo se $a_{2021} = [0]$ abbiamo:
+    \begin{equation*}
+        a_{2023} = a_{2021} + a_{2022} = [0] + [0] = [0]
+    \end{equation*}
+
+    Ma se $a_{2022} = [0]$ e $a_{2021} = [0]$, allora $a_{2020}$ non può che essere $[0]$.
+    E così via fino ad arrivare a $a_1 = [0]$ e $a_2 = [0]$.
+
+    Ora scegliamo $a_{2022} = [1]$.
+    Quali possono essere i valori di $a_{2021}$?
+    Può essere solo $a_{2021} = [8]$, perché
+    \begin{equation*}
+        a_{2023} = a_{2021} + a_{2022} = [8] + [1] = [0]
+    \end{equation*}
+
+    Ma se $a_{2022} = [1]$ e $a_{2021} = [8]$, allora $a_{2020}$ non può che essere $[2]$.
+    Se seguo tutta la catena a ritroso fino a $a_1$ ho sempre una sola scelta per assegnare un valore a ciascun elemento
+    della successione.
+    Non ho idea di quale sia (e non mi interessa saperlo) la coppia di partenza $(a_1, a_2)$, ma sicuramente c'è una sola
+    coppia che porta ad avere $a_{2022} = [1]$.
+
+    A questo punto diventa immediato capire che qualunque sia il numero che scegliamo per $a_{2022}$ c'è un'unica
+    successione di numeri che porta a quel valore.
+    Ed in particolare per ogni possibile valore di $a_{2022}$ c'è una sola coppia $(a_1, a_2)$ di partenza.
+
+    Abbiamo 9 possibili valori di $a_{2022}$, quindi abbiamo 9 possibili coppie di partenza. \textbf{Risposta C.}
+
+\end{soluzione}
+
 \begin{soluzione}{ex:francesco_1}
     Il numero $\overline{abcabc}$ può essere scomposto in:
     \begin{equation*}
