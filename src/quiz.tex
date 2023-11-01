@@ -14,6 +14,19 @@
     \end{equation*}
 \end{esercizio}
 
+\section{Quiz dai giochi di Archimede}
+\label{sec:quiz_giochi_archimede}
+
+\begin{esercizio}[Giochi di Archimede 2000 - Triennio]
+    \label{ex:archimede_2000_triennio_1}
+    Un podista e un ciclista partono insieme dalla città $A$ diretti alla città $B$ distante da $A$ 13 km, con
+    l’accordo di fare la spola fra $A$ e $B$ senza fermarsi mai.
+    Sapendo che ogni ora il podista percorre 9 km mentre il ciclista ne percorre 25, quale distanza separerà i due
+    sportivi dopo tre ore dall’inizio della competizione?
+
+    (A) 1 km \quad (B) 2 km \quad (C) 3 km \quad (D) 4 km \quad (E) 5 km.
+\end{esercizio}
+
 \section{Quiz dalle gare distrettuali}
 \label{sec:quiz_gare_distrettuali}
 
@@ -68,15 +81,39 @@
     (A) 30 \quad (B) 33 \quad (C) 300 \quad (D) 333 \quad (E) Nessuna delle precedenti.
 \end{esercizio}
 
+\begin{esercizio}[Gare distrettuali 2023, es. 9]
+    \label{ex:distrettuali_2023_9}
+    La successione $a_n$ è costruita nel modo seguente:
+    $a_1$, $a_2$ sono interi compresi fra 1 e 9 (estremi inclusi);
+    per $n \ge 3$, se la somma fra $a_{n-1}$ e $a_{n-2}$ consta di una sola cifra, allora tale somma è il valore di $a_n$;
+    se invece $a_{n-1} + a_{n-2}$ ha più di una cifra, la somma delle sue cifre sarà il valore di $a_n$
+    (ad esempio, se $a_4 = 7$ e $a_5 = 8$, allora $a_6 = 6$ in quanto $7 + 8 = 15$ e $1 + 5 = 6$).
+    Quante sono le scelte possibili della coppia $(a_1, a_2)$ tali che si abbia $a_{2023} = 9$?
+
+    (A) 1 \quad (B) 3 \quad (C) 9 \quad (D) 27 \quad (E) 81
+\end{esercizio}
+
 \section{Altri quiz}
 \label{sec:quiz_altri}
 
-\begin{esercizio}[Proposto da Francesco P.]
+\begin{esercizio}[Proposto da Francesco P]
     \label{ex:francesco_1}
     Quanti sono i numeri nella forma $\overline{abcabc}$ divisibili per 2023?
 \end{esercizio}
 
-\begin{esercizio}[Proposto da Francesco P.]
+\begin{esercizio}[Proposto da Francesco P]
     \label{ex:francesco_2}
     Quanti sono i numeri nella forma $\overline{abcabc}$ che sono quadrati perfetti?
+\end{esercizio}
+
+\begin{esercizio}[Proposto da Claudio S]
+    \label{ex:claudio_1}
+    Si consideri l'esercizio~\ref{ex:archimede_2000_triennio_1}.
+
+    Scrivere un algoritmo che risolva il problema considerando una distanza tra le due città pari a $d$, una velocità
+    del primo sportivo pari a $v_1$, una velocità del secondo sportivo pari a $v_2$ e un tempo pari a $t$.
+
+    Dopo aver scritto l'algoritmo rifletti: l'algoritmo è adatto a qualunque valore dei parametri?
+    O solo a valori interi?
+    Se dovessi renderlo più generale e considerare valori reali, come dovresti modificare l'algoritmo?
 \end{esercizio}

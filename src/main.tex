@@ -1,59 +1,14 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,11pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
+\usepackage{quimatematica}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{siunitx}
-\usepackage[framemethod=TikZ]{mdframed}
 \usepackage{float}
-
-\mdfdefinestyle{definitionstyle}{%
-	linecolor=green,linewidth=2pt,%
-	frametitlerule=true,%
-	frametitlebackgroundcolor=green!20,%
-	innertopmargin=\topskip,
-}
-
-\mdfdefinestyle{theoremstyle}{%
-	linecolor=red,linewidth=2pt,%
-	frametitlerule=true,%
-	frametitlebackgroundcolor=red!20,%
-	innertopmargin=\topskip,
-	subtitlebelowline=false,subtitleaboveline=false,
-	subtitlebackgroundcolor=red!10,
-}
-
-\mdfdefinestyle{exercisestyle}{%
-	linecolor=blue,linewidth=2pt,%
-	frametitlerule=true,%
-	frametitlebackgroundcolor=blue!20,%
-	innertopmargin=\topskip,
-	subtitlebelowline=false,subtitleaboveline=false,
-	subtitlebackgroundcolor=blue!10,
-}
-
-\mdtheorem[style=definitionstyle]{definizione}{Definizione}[chapter]
-\mdtheorem[style=theoremstyle]{teorema}{Teorema}[chapter]
-\mdtheorem[style=exercisestyle]{esercizio}{Esercizio}[chapter]
-
-\newmdenv[linecolor=red,linewidth=2pt]{dimostrazione}
-\newmdenv[
-	subtitleaboveskip=0,
-	linecolor=blue,linewidth=2pt,
-	subtitlebelowline=false,subtitleaboveline=false,
-	subtitlebackgroundcolor=blue!20,
-]{soluzione}
-
-\newcommand{\Z}[0]{\ensuremath{ \mathbb{Z} }}
-\newcommand{\valoreassoluto}[1]{\ensuremath{ \lvert #1 \rvert }}
-\newcommand{\divisore}[0]{\ensuremath{ \mid }}
-\newcommand{\sse}[0]{\ensuremath{ \quad\Longleftrightarrow\quad }}
-\newcommand{\allora}[0]{\ensuremath{ \quad\Longrightarrow\quad }}
-\newcommand{\modulo}[0]{\ensuremath{ \bmod }}
-\newcommand{\congruenti}[3]{\ensuremath{ #1 \equiv #2 \quad\bmod #3 }}
 
 \begin{document}
 

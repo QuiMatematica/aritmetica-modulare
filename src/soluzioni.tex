@@ -2,8 +2,7 @@
 \label{ch:soluzioni}
 
 
-\begin{soluzione}
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:stage_senior_41}}
+\begin{soluzione}{ex:stage_senior_41}
 
     Affinché $\dfrac{n + 3}{n + 1}$ sia intero è necessario che $n+1$ divida $n+3$:
     \begin{gather*}
@@ -101,8 +100,25 @@
     \end{align*}
 \end{soluzione}
 
-\begin{soluzione}
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2017_13}}
+\begin{soluzione}{ex:archimede_2000_triennio_1}
+    Dopo 3 ore il podista ha percorso:
+    \[ 9 \cdot 3 = 27 \text{ km} \]
+    Tenendo conto di andata e ritorno il percorso è di 26 km.
+    Quindi il podista è arrivato ad una distanza da $A$ pari a:
+    \[ 27 \mod 26 = 1 \text{ km} \]
+
+    Dopo 3 ore il ciclista ha percorso:
+    \[ 25 \cdot 3 = 75 \text{ km} \]
+    Quindi è arrivato ad una distanza da $A$ pari a:
+    \[ 75 \mod 26 = 23 \text{ km} \]
+    23 è maggiore di 13, quindi il ciclista sta tornando indietro da $B$ verso $A$, quindi si trova ad una distanza da $A$ pari a:
+    \[ 26 - 23 = 3 \text{ km} \]
+
+    Quindi la distanza finale dei due sportivi è pari a:
+    \[ 3 - 1 = 2 \text{ km} \]
+\end{soluzione}
+
+\begin{soluzione}{ex:distrettuali_2017_13}
     Dobbiamo determinare le cifre $a$ e $b$ tali che:
     \begin{equation*}
         a1211b \modulo 88 = 0
@@ -151,12 +167,10 @@
         112112 : 88 = 1274
     \end{equation*}
 
-    \mdfsubtitle{Risposta}
-    Un singolo vaso costa 1274 dracme.
+    \textbf{Un singolo vaso costa 1274 dracme.}
 \end{soluzione}
 
-\begin{soluzione}
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018_1}}
+\begin{soluzione}{ex:distrettuali_2018_1}
     Chiamiamo $n$ il numero di risposte corrette date da Camilla.
     Quindi ha sbagliato $90 - n$ risposte.
 
@@ -173,8 +187,10 @@
     L'unico punteggio tra quelli proposti non divisibile per 6 è il 116.
 \end{soluzione}
 
-\begin{soluzione}
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018_15}: parte 1)}
+\begin{soluzione}{ex:distrettuali_2018_15}
+
+    \textbf{Parte 1.}
+
     L'esercizio ci chiede di trovare tutti i numeri interi positivi di due cifre $\overline{ab}$ che sono divisibili
     per $a$ e per $b$:
     \begin{gather*}
@@ -225,11 +241,10 @@
     \end{itemize}
 
     \bigskip
-    \mdfsubtitle{Risposta}
-    Gli interi positivi cercati sono: 11, 12, 15, 22, 24, 33, 36, 44, 48, 55, 66, 77, 88, 99.
+    \textbf{Gli interi positivi cercati sono: 11, 12, 15, 22, 24, 33, 36, 44, 48, 55, 66, 77, 88, 99.}
 
     \bigskip
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2018_15}: parte 2)}
+    \textbf{Parte 2.}
     Ora abbiamo a che fare con numeri di due o più cifre.
     Non possiamo più usare la notazione posizionale, ma possiamo comunque scomporre il numero $n$ in $10a + b$,
     dove $a$ è un qualunque numero intero maggiore di 1, e $b$ è una singola cifra.
@@ -249,8 +264,7 @@
     Quindi il numero numero $n = 10a + b$ è composto al più di 2 cifre.
 \end{soluzione}
 
-\begin{soluzione}
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2019}}
+\begin{soluzione}{ex:distrettuali_2019}
     La condizione
     \begin{quotation}
         $n$ e $n + 5$ devono avere lo stesso colore per ogni $n$ intero
@@ -357,12 +371,10 @@
     \end{multline*}
 
     \bigskip
-    \mdfsubtitle{Risposta}
-    Jacopo può colorare gli interi in 3936 modi diversi.
+    \textbf{Jacopo può colorare gli interi in 3936 modi diversi.}
 \end{soluzione}
 
-\begin{soluzione}
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:distrettuali_2021}}
+\begin{soluzione}{ex:distrettuali_2021}
     I numeri palindromi di 6 cifre hanno la seguente struttura:
 
     \begin{equation*}
@@ -494,12 +506,65 @@
     \end{table}
 
     \bigskip
-    \mdfsubtitle{Risposta}
-    I numeri palindromi di 6 cifre divisibili per 33 sono 300.
+    \textbf{I numeri palindromi di 6 cifre divisibili per 33 sono 300.}
 \end{soluzione}
 
-\begin{soluzione}
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:francesco_1}}
+\begin{soluzione}{ex:distrettuali_2023_9}
+    Innanzitutto osserviamo che il modo di costruire la successione utilizza le classi di congruenza modulo 9, dove
+    però viene scelto il numero 9 come rappresentante della classe $[0]_9$.
+
+    Infatti se abbiamo due numeri $a$ e $b$ la cui somma $a+b$ è minore di 10 (quindi è composta da una sola cifra),
+    $a+b$ può essere considerata come la somma delle classi di congruenza dei due addendi $a$ e $b$.
+    Quindi:
+    \begin{equation*}
+        a + b < 10 \allora [a]_9 + [b]_9 = [a+b]_9
+    \end{equation*}
+
+    Se invece la somma è maggiore o uguale a 10 (quindi composta di più di una cifra), il fare la somma delle cifre
+    significa utilizzare il criterio di congruenza modulo 9.
+    E quindi:
+    \begin{equation*}
+        a + b \ge 10 \allora [a]_9 + [b]_9 = [a+b]_9
+    \end{equation*}
+
+    Insomma: invece che lavorare con i numeri lavoriamo con le classi di congruenza modulo 9 (che non specificherò più).
+
+    Ora, partiamo dal fondo e, invece di scegliere i numeri di partenza $a_1$ e $a_2$, vediamo in quanti modi possiamo
+    scegliere i numeri $a_{2022}$ e $a_{2021}$.
+    E ricordiamoci che dobbiamo ottenere $a_{2023} = [9] = [0]$
+
+    Iniziamo scegliendo $a_{2022} = [0]$.
+    Quali possono essere i valori di $a_{2021}$?
+    Può essere uno solo, perché solo se $a_{2021} = [0]$ abbiamo:
+    \begin{equation*}
+        a_{2023} = a_{2021} + a_{2022} = [0] + [0] = [0]
+    \end{equation*}
+
+    Ma se $a_{2022} = [0]$ e $a_{2021} = [0]$, allora $a_{2020}$ non può che essere $[0]$.
+    E così via fino ad arrivare a $a_1 = [0]$ e $a_2 = [0]$.
+
+    Ora scegliamo $a_{2022} = [1]$.
+    Quali possono essere i valori di $a_{2021}$?
+    Può essere solo $a_{2021} = [8]$, perché
+    \begin{equation*}
+        a_{2023} = a_{2021} + a_{2022} = [8] + [1] = [0]
+    \end{equation*}
+
+    Ma se $a_{2022} = [1]$ e $a_{2021} = [8]$, allora $a_{2020}$ non può che essere $[2]$.
+    Se seguo tutta la catena a ritroso fino a $a_1$ ho sempre una sola scelta per assegnare un valore a ciascun elemento
+    della successione.
+    Non ho idea di quale sia (e non mi interessa saperlo) la coppia di partenza $(a_1, a_2)$, ma sicuramente c'è una sola
+    coppia che porta ad avere $a_{2022} = [1]$.
+
+    A questo punto diventa immediato capire che qualunque sia il numero che scegliamo per $a_{2022}$ c'è un'unica
+    successione di numeri che porta a quel valore.
+    Ed in particolare per ogni possibile valore di $a_{2022}$ c'è una sola coppia $(a_1, a_2)$ di partenza.
+
+    Abbiamo 9 possibili valori di $a_{2022}$, quindi abbiamo 9 possibili coppie di partenza. \textbf{Risposta C.}
+
+\end{soluzione}
+
+\begin{soluzione}{ex:francesco_1}
     Il numero $\overline{abcabc}$ può essere scomposto in:
     \begin{equation*}
         \overline{abcabc} = \overline{abc} \cdot 1001 = \overline{abc} \cdot 7 \cdot 11 \cdot 13
@@ -536,14 +601,10 @@
     \end{equation*}
 
     \bigskip
-    \mdfsubtitle{Risposta}
-    I numeri nella forma $\overline{abcabc}$ divisibili per 2023 sono 3.
-
-    Essi sono: 289289, 578578 e 867867.
+    \textbf{I numeri nella forma $\overline{abcabc}$ divisibili per 2023 sono 3: 289289, 578578 e 867867.}
 \end{soluzione}
 
-\begin{soluzione}
-    \mdfsubtitle{Soluzione esercizio~\ref{ex:francesco_2}}
+\begin{soluzione}{ex:francesco_2}
     Il numero $\overline{abcabc}$ può essere scomposto in:
 
     \begin{equation*}
@@ -555,6 +616,5 @@
     Ma il più piccolo numero (diverso da 0) divisibile per 1001 è 1001, che è composto di 4 cifre, non di 3.
 
     \bigskip
-    \mdfsubtitle{Risposta}
-    Non esistono numeri nella forma $\overline{abcabc}$ che sono quadrati perfetti.
+    \textbf{Non esistono numeri nella forma $\overline{abcabc}$ che siano quadrati perfetti.}
 \end{soluzione}
